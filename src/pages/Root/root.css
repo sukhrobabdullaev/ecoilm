@@ -1,0 +1,55 @@
+.bg3 {
+  background: rgb(24, 121, 9);
+  background: linear-gradient(
+    90deg,
+    rgba(24, 121, 9, 0.7035189075630253) 0%,
+    rgba(9, 121, 71, 0.7231267507002801) 48%,
+    rgba(0, 4, 223, 0.7651435574229692) 100%
+  );
+}
+
+.txt_1 {
+  color: rgb(2, 0, 36);
+  color: linear-gradient(
+    90deg,
+    rgba(2, 0, 36, 1) 0%,
+    rgba(9, 121, 69, 0.7651435574229692) 63%,
+    rgba(0, 223, 112, 1) 100%
+  );
+}
+
+#app {
+  height: 100%;
+}
+
+body {
+  background: #eee;
+  font-family: Helvetica Neue, Helvetica, Arial, sans-serif;
+  font-size: 14px;
+  color: #000;
+  margin: 0;
+  padding: 0;
+}
+
+.swiper {
+  width: 100%;
+  height: 100%;
+}
+
+.swiper-slide {
+  text-align: center;
+  font-size: 18px;
+  background: #fff;
+
+  /* Center slide text vertically */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.swiper-slide img {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}

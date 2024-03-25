@@ -1,0 +1,21 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* .container{
+  width: 100%;
+  margin: 0 auto;
+} */
+.d_flex {
+  display: flex;
+}
+.scroll-container {
+  width: 300px; /* Sabit genişlik */
+  height: 200px; /* Sabit yükseklik */
+  overflow: auto; /* İçerik sığmadığında kaydırma çubuğunu göster */
+  border: 1px solid #ccc; /* İsteğe bağlı: çerçeve ekleyebilirsiniz */
+}
+
+.scroll-content {
+  padding: 10px;
+}

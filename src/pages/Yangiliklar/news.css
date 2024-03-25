@@ -1,0 +1,8 @@
+.text_shadow {
+    text-shadow: 6px 4px 8px rgb(13, 204, 13);
+}
+.glass {
+    background: linear-gradient(135deg, rgba(255, 255, 255, 0.1), rgba(255, 255, 255, 0));
+    backdrop-filter: blur(15px);
+    -webkit-backdrop-filter: blur(10px);
+}
