@@ -17,25 +17,27 @@ export default function Jurnallar() {
     fetchData();
   }, []);
   console.log(data);
+
   return (
     <div className="container">
       <div className="grid lg:grid-cols-12 md:grid-cols-8 pb-20 mt-3 px-6 lg:gap-20 md:gap-14 gap-10 md:max-w-[1200px] mx-auto">
-        {data.map((el) => (
-          <div className="col-span-4" key={el.id}>
-            <img
-              className="mt-6 shadow-lg lg:h-[460px] md:h-[453px]"
-              src="./assets/img/Image [img-fluid] (3).png"
-              alt=""
-            />
-            <a
-              href={el.file}
-              target="_blank"
-              className="ms-[110px] inline-block mt-5 bg-blue-500 shadow-lg  lg:ms-[106px] md:ms-[100px]  text-white px-3 rounded-lg py-1"
-            >
-              Yuklab olish
-            </a>
-          </div>
-        ))}
+        {data &&
+          data.map((el) => (
+            <div className="col-span-4" key={el.id}>
+              <img
+                className="mt-6 shadow-lg lg:h-[460px] md:h-[453px]"
+                src="/assets/img/Image [img-fluid] (3).png"
+                alt=""
+              />
+              <a
+                href={el.file}
+                download
+                className="ms-[110px] inline-block mt-5 bg-blue-500 shadow-lg  lg:ms-[106px] md:ms-[100px]  text-white px-3 rounded-lg py-1"
+              >
+                Yuklab olish
+              </a>
+            </div>
+          ))}
       </div>
     </div>
   );
