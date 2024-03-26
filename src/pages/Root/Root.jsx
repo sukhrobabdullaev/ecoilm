@@ -83,13 +83,6 @@ export default function Root() {
           </div>
         </div>
       </div>
-
-      <div className="jurnallar_section mt-[50px]">
-        <p className="font-normal text-center text-[30px] md:text-[40px] mt-3">
-          Jurnallar
-        </p>
-        <Jurnallar />
-      </div>
       <div className="md:max-w-[1200px] mx-auto mt-10 ">
         <p className="text-[30px] text-center">Hamkorlar</p>
         <div className="mt-[40px] flex md:flex-row flex-col items-center py-10  gap-8">
@@ -124,6 +117,12 @@ export default function Root() {
             alt=""
           />
         </div>
+      </div>
+      <div className="jurnallar_section mt-[50px]">
+        <p className="font-normal text-center text-[30px] md:text-[40px] mt-3">
+          Jurnallar
+        </p>
+        <Jurnallar />
       </div>
 
       <div className="flex  flex-col items-center justify-center my-10 gap-5">
