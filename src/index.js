@@ -22,23 +22,23 @@ import Maqola from "./pages/Maqola/Maqola";
 import Kutubxona from "./pages/Kutubxona/Kutubxona";
 import Root from "./pages/Root/Root";
 import Kengash from "./pages/Kengash/Kengash";
-import 'animate.css'
+import "animate.css";
 import Single from "./pages/SinglePage/Single";
-
+import LatestNews from "./pages/Root/LatestNews";
 
 const root = ReactDOM.createRoot(document.getElementById("root"));
 root.render(
   <BrowserRouter>
     <Routes>
-      <Route path="/" element={<App/>}>
-        <Route index path="/" element={<Root/>}/>
+      <Route path="/" element={<App />}>
+        <Route index path="/" element={<Root />} />
         <Route path="/tuzulma" element={<Tuzulma />} />
         <Route path="/vazifa" element={<Vazifa />} />
         <Route path="/labaratoriya" element={<Labaratoriye />} />
         <Route path="/raxbaryat" element={<Rahbaryat />} />
         <Route path="/boglanish" element={<Boglanish />} />
         <Route path="/loyhalar" element={<Loyhalar />} />
-        <Route path="/yangiliklar" element={<Yangiliklar />} />
+        <Route path="/yangiliklar" element={<LatestNews />} />
         <Route path="/elonlar" element={<Elonlar />} />
         <Route path="/jurnallar" element={<Jurnallar />} />
         <Route path="/maqola" element={<Maqola />} />

@@ -11,11 +11,11 @@ export default function Kengash() {
   };
   return (
     <div className="">
-      <h1 className="lg:text-[60px]  md:text-[25px] sm:text-[20px] font-bold text-[#58c77fe3] text-center py-5">
+      <h1 className="lg:text-[60px] md:text-[25px] sm:text-[20px] font-bold text-[#58c77fe3] text-center py-5">
         Ilmiy kengash
       </h1>
-      <div className="px-8 grid grid-cols-1 sm:grid-cols-1 md:grid-cols-2 lg:grid-cols-2 gap-3">
-        <div className="ml-[20%] md:w-[460px] md:h-[430px] w-[415px] h-[450px]  rounded-md rounded-tr-md bg-white  shadow-2xl hover:shadow-xl cursor-pointer">
+      <div className=" grid grid-cols-1 sm:grid-cols-1 md:grid-cols-2 lg:grid-cols-2 gap-3">
+        <div className="md:ml-[20%] w-[300px] md:w-[460px] md:h-[430px] mx-auto h-[450px]  rounded-md rounded-tr-md bg-white  shadow-2xl hover:shadow-xl cursor-pointer">
           <img
             className="w-full rounded-tl-md rounded-tr-md-md rounded-tr-md"
             src="./assets/img/photo_2023-08-16_13-16-11-Xr23bArNs-transformed (1) 2 (1).png"
@@ -36,7 +36,7 @@ export default function Kengash() {
             </p>
           </div>
         </div>
-        <div className="ml-[20%]  md:w-[460px] md:h-[430px] w-[415px] h-[430px]  rounded-md rounded-tr-md bg-white  shadow-2xl hover:shadow-xl cursor-pointer">
+        <div className="md:ml-[20%] w-[300px]  md:w-[460px] md:h-[430px] mx-auto h-[430px]  rounded-md rounded-tr-md bg-white  shadow-2xl hover:shadow-xl cursor-pointer">
           <img
             className="w-full rounded-tl-md rounded-tr-md-md rounded-tr-md"
             src="./assets/img/photo_2023-08-16_13-16-11-Xr23bArNs-transformed (1) 2 (1).png"

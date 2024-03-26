@@ -9,12 +9,12 @@ export default function Yangiliklar() {
     setCurrent(page);
   };
   return (
-    <div className="max-w-[1440px] flex flex-col items-center container">
+    <div className="md:max-w-[1440px] mx-auto max-w-[300px] flex flex-col items-center container">
       <h1 className="lg:text-[60px] md:text-[50px] text-[30px] font-semibold text-[#000300]  lg:top-[90px] lg:left-[130px] md:top-[70px] md:left-[120px] top-[100px] left-[40px]">
         E'lonlar
       </h1>
-      <div className="w-full h-auto py-10 border-t-4 border-t-[#299a50e3] mx-auto px-[45px] mt-5 grid lg:grid-cols-3 md:grid-cols-2 sm:grid-cols-1 lg:gap-5  sm:gap-2">
-        <div className="w-[370px] h-[390px]  rounded-lg shadow-xl hover:shadow-2xl cursor-pointer">
+      <div className="flex flex-col md:flex-row flex-wrap gap-4">
+        <div className="w-[300px] h-[390px]  rounded-lg shadow-xl hover:shadow-2xl cursor-pointer">
           <img
             className="w-full rounded-tl-tl rounded-tr-md-md rounded-tr-md"
             src="./assets/img/glavniy.JPG"
@@ -34,7 +34,7 @@ export default function Yangiliklar() {
             </p>
           </div>
         </div>
-        <div className="w-[370px] h-[390px]  rounded-lg shadow-xl hover:shadow-2xl cursor-pointer">
+        <div className="w-[300px] h-[390px]  rounded-lg shadow-xl hover:shadow-2xl cursor-pointer">
           <img
             className="w-full rounded-tl-tl rounded-tr-md-md rounded-tr-md"
             src="./assets/img/glavniy.JPG"
@@ -54,7 +54,7 @@ export default function Yangiliklar() {
             </p>
           </div>
         </div>
-        <div className="w-[370px] h-[390px]  rounded-lg shadow-xl hover:shadow-2xl cursor-pointer">
+        <div className="w-[300px] h-[390px]  rounded-lg shadow-xl hover:shadow-2xl cursor-pointer">
           <img
             className="w-full rounded-tl-tl rounded-tr-md-md rounded-tr-md"
             src="./assets/img/glavniy.JPG"
@@ -74,7 +74,7 @@ export default function Yangiliklar() {
             </p>
           </div>
         </div>
-        <div className="w-[370px] h-[390px]  rounded-lg shadow-xl hover:shadow-2xl cursor-pointer">
+        <div className="w-[300px] h-[390px]  rounded-lg shadow-xl hover:shadow-2xl cursor-pointer">
           <img
             className="w-full rounded-tl-tl rounded-tr-md-md rounded-tr-md"
             src="./assets/img/glavniy.JPG"
@@ -94,7 +94,7 @@ export default function Yangiliklar() {
             </p>
           </div>
         </div>
-        <div className="w-[370px] h-[390px]  rounded-lg shadow-xl hover:shadow-2xl cursor-pointer">
+        <div className="w-[300px] h-[390px]  rounded-lg shadow-xl hover:shadow-2xl cursor-pointer">
           <img
             className="w-full rounded-tl-tl rounded-tr-md-md rounded-tr-md"
             src="./assets/img/glavniy.JPG"
@@ -114,7 +114,7 @@ export default function Yangiliklar() {
             </p>
           </div>
         </div>
-        <div className="w-[370px] h-[390px]  rounded-lg shadow-xl hover:shadow-2xl cursor-pointer">
+        <div className="w-[300px] h-[390px]  rounded-lg shadow-xl hover:shadow-2xl cursor-pointer">
           <img
             className="w-full rounded-tl-tl rounded-tr-md-md rounded-tr-md"
             src="./assets/img/glavniy.JPG"

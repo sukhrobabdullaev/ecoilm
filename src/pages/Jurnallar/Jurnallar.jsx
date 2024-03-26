@@ -16,7 +16,7 @@ export default function Jurnallar() {
 
     fetchData();
   }, []);
-
+  console.log(data);
   return (
     <div className="container">
       <div className="grid lg:grid-cols-12 md:grid-cols-8 pb-20 mt-3 px-6 lg:gap-20 md:gap-14 gap-10">

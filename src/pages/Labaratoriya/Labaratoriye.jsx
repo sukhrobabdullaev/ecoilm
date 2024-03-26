@@ -3,12 +3,12 @@ import { Collapse } from "antd";
 import "./lab.css";
 export default function Labaratoriye() {
   return (
-    <div className="mx-[20%] my-14 grid grid-cols-1 gap-5">
-      <h1 className="md:text-[45px] font-normal text-[20px] text-start">
+    <div className="md:mx-[20%] my-14 grid grid-cols-1 gap-5">
+      <h1 className="md:text-[45px] font-normal text-base text-center">
         Laboratoriya va bo'limlar haqida ma'lumot
       </h1>
       <Collapse
-        className="w-[300px] md:w-[600px] lg:w-[900px] bg_lab"
+        className="w-[300px] mx-auto md:w-[600px] lg:w-[900px] bg_lab"
         size="large"
         items={[
           {
@@ -63,7 +63,7 @@ export default function Labaratoriye() {
         ]}
       />
       <Collapse
-        className="w-[300px] md:w-[600px] lg:w-[900px] bg_lab"
+        className="w-[300px] mx-auto  md:w-[600px] lg:w-[900px] bg_lab"
         size="large"
         items={[
           {
@@ -110,7 +110,7 @@ export default function Labaratoriye() {
         ]}
       />
       <Collapse
-        className="w-[300px] md:w-[600px] lg:w-[900px] bg_lab"
+        className="w-[300px] mx-auto  md:w-[600px] lg:w-[900px] bg_lab"
         size="large"
         items={[
           {
@@ -161,7 +161,7 @@ export default function Labaratoriye() {
         ]}
       />
       <Collapse
-        className="w-[300px] md:w-[600px] lg:w-[900px] bg_lab"
+        className="w-[300px] mx-auto  md:w-[600px] lg:w-[900px] bg_lab"
         size="large"
         items={[
           {
@@ -211,7 +211,7 @@ export default function Labaratoriye() {
         ]}
       />
       <Collapse
-        className="w-[300px] md:w-[600px] lg:w-[900px] bg_lab"
+        className="w-[300px] mx-auto  md:w-[600px] lg:w-[900px] bg_lab"
         size="large"
         items={[
           {
@@ -268,7 +268,7 @@ export default function Labaratoriye() {
         ]}
       />
       <Collapse
-        className="w-[300px] md:w-[600px] lg:w-[900px] bg_lab"
+        className="w-[300px] mx-auto  md:w-[600px] lg:w-[900px] bg_lab"
         size="large"
         items={[
           {

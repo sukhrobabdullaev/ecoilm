@@ -28,10 +28,7 @@ export default function New() {
               return (
                 <div key={index} className="col-span-4 ">
                   <div className="bg-white drop-shadow-md pb-4 ">
-                    <img
-                      src={`https://idrisov.uz/media/news_images${item.image}`}
-                      alt="vfgbh"
-                    />
+                    <img src={item.image} alt="vfgbh" />
                     <p className="p-3 text-center sm:text-lg sm:font-semibold md:text-lg md:font-semibold lg:text-xl lg:font-semibold xl:text-2xl xl:font-semibold 2xl:text-2xl 2xl:font-bold">
                       {item.title}
                     </p>
