@@ -34,9 +34,9 @@ const LatestNews = () => {
     <div>
       {data[0] && (
         <div className="flex flex-col gap-4 md:max-w-[850px]">
-          {/* <h3 className="text-xl text-center font-semibold text-green-500 font-serif">
+          <h3 className="text-xl text-center font-semibold text-green-500 font-serif">
             So'ngi yangiliklar
-          </h3> */}
+          </h3>
           <div className="rounded-md bg-white shadow-2xl hover:shadow-xl cursor-pointer p-4">
             <img
               className="md:w-[500px] md:h-[300px] w-[300px] h-[300px]  mx-auto  object-cover"
@@ -45,7 +45,7 @@ const LatestNews = () => {
             />
             <h3 className="text-[20px] font-semibold">{data[0].title}</h3>
             <p className="py-2 ">{data[0].content}</p>
-            <div className="flex items-center justify-between md:pt-[380px]">
+            <div className="flex items-center justify-between md:pt-[170px]">
               <div className="flex gap-1 items-center">
                 <IoTimeOutline className="text-gray-500" size={20} />
                 <p className="text-gray-500 font-semibold">

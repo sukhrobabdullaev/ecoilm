@@ -33,7 +33,7 @@ const News = () => {
 
   return (
     <div className="flex md:flex-row flex-col md:gap-20 gap-10">
-      <div className="flex gap-4 items-center flex-wrap">
+      <div className="flex gap-4 flex-wrap">
         {data.map((el) => (
           <div
             className="md:w-[400px] h-auto rounded-md bg-white  shadow-2xl hover:shadow-xl cursor-pointer p-4 flex flex-col gap-2"

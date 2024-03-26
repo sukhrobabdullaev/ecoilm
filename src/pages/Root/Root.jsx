@@ -36,7 +36,7 @@ export default function Root() {
     <div>
       <div className="">
         <img
-          className="object-cover w-full h-[490px]"
+          className="object-cover w-full h-[82vh]"
           src="./assets/img/glavniy.JPG"
           alt=""
         />
@@ -92,7 +92,7 @@ export default function Root() {
       </div>
       <div className="md:max-w-[1200px] mx-auto mt-10 ">
         <p className="text-[30px] text-center">Hamkorlar</p>
-        <div className="mt-[40px] flex md:flex-row flex-col items-center py-10 justify-between overflow-x-auto gap-8">
+        <div className="mt-[40px] flex md:flex-row flex-col items-center py-10  gap-8">
           <img
             className="md:w-[180px] md:h-[180px] w-[200px] object-cover"
             src="./assets/img/misteo.png"

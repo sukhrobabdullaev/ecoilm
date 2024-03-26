@@ -2,10 +2,6 @@
 @tailwind components;
 @tailwind utilities;
 
-/* .container{
-  width: 100%;
-  margin: 0 auto;
-} */
 .d_flex {
   display: flex;
 }
