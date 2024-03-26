@@ -44,7 +44,7 @@ root.render(
         <Route path="/maqola" element={<Maqola />} />
         <Route path="/kutubxona" element={<Kutubxona />} />
         <Route path="/kengash" element={<Kengash />} />
-        <Route path="/singlenews" element={<Single />} />
+        <Route path="/news/:id" element={<Single />} />
       </Route>
     </Routes>
   </BrowserRouter>

@@ -1,11 +1,21 @@
 import axios from "axios";
 import { IoTimeOutline } from "react-icons/io5";
 import React, { useEffect, useState } from "react";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 
+export const formatDate = (dateString) => {
+  const date = new Date(dateString);
+  const day = date.getUTCDate();
+  const month = date.getUTCMonth() + 1; // Months are zero-based, so add 1
+  const year = date.getUTCFullYear();
+  return `${day < 10 ? "0" : ""}${day}.${
+    month < 10 ? "0" : ""
+  }${month}.${year}`;
+};
 const News = () => {
   const [data, setData] = useState([]);
 
+  const navigate = useNavigate();
   useEffect(() => {
     const fetchData = async () => {
       try {
@@ -18,18 +28,6 @@ const News = () => {
 
     fetchData();
   }, []);
-
-  const formatDate = (dateString) => {
-    const date = new Date(dateString);
-    const day = date.getUTCDate();
-    const month = date.getUTCMonth() + 1; // Months are zero-based, so add 1
-    const year = date.getUTCFullYear();
-    return `${day < 10 ? "0" : ""}${day}.${
-      month < 10 ? "0" : ""
-    }${month}.${year}`;
-  };
-
-  console.log(data);
 
   return (
     <div className="flex md:flex-row flex-col md:gap-20 gap-10">
@@ -56,6 +54,7 @@ const News = () => {
               <button
                 type="button"
                 className=" text-white bg-green-500 hover:bg-green-600 font-medium rounded-lg text-sm px-4 py-2"
+                onClick={() => navigate(`/news/${el.id}`)}
               >
                 Batafsil
               </button>

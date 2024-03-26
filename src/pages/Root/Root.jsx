@@ -37,7 +37,7 @@ export default function Root() {
       <div className="">
         <img
           className="object-cover w-full h-[82vh]"
-          src="./assets/img/glavniy.JPG"
+          src="/assets/img/glavniy.JPG"
           alt=""
         />
       </div>

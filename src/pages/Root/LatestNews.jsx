@@ -1,10 +1,12 @@
 import axios from "axios";
 import { IoTimeOutline } from "react-icons/io5";
 import React, { useEffect, useState } from "react";
+import { useNavigate } from "react-router-dom";
 
 const LatestNews = () => {
   const [data, setData] = useState([]);
 
+  const navigate = useNavigate();
   useEffect(() => {
     const fetchData = async () => {
       try {
@@ -55,6 +57,7 @@ const LatestNews = () => {
               <button
                 type="button"
                 className=" text-white bg-green-500 hover:bg-green-600 font-medium rounded-lg text-sm px-4 py-2"
+                onClick={() => navigate(`/news/${data[0].id}`)}
               >
                 Batafsil
               </button>
