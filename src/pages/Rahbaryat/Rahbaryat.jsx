@@ -10,7 +10,7 @@ export default function Rahbaryat() {
         Atrof muhit va tabiatni muhofaza qilish texnologiyalari ilmiy-tadqiqot
         instituti rahbaryati
       </p>
-      <div className="grid mt-3 gap-7 mb-7 mx-8 px-4 lg:grid-cols-12 md:grid-cols-9 sm:grid-cols-6">
+      <div className="grid mt-3 gap-7 mb-7 px-4 lg:grid-cols-12 md:grid-cols-9 sm:grid-cols-6 md:max-w-[1200px] mx-auto">
         <div className="col-span-3 shadow-xl  mb-4 rounded-lg bg-white">
           <img
             className="mt-4"
@@ -66,25 +66,6 @@ export default function Rahbaryat() {
             +998 71 277 69 83
           </p>
           <p className="text-center md:text-[13px] md:mt-[50px] lg:mt-8 mb-4 ">
-            Juma kuni,10:00 - 12:00
-          </p>
-        </div>
-        <div className="col-span-3 shadow-xl mb-4 rounded-lg bg-white">
-          <img
-            className="mt-4"
-            src="./assets/img/JOA 2.1f1b2226ee7ed4326930.png"
-            alt=""
-          />
-          <p className="mt-3  lg:text-[20px] md:text-[17px] sm:text-[17px] text-[15px] text-center px-1 font-semibold">
-            AMINOV XAMZA XUSANOVICH
-          </p>
-          <p className="text-center lg:text-[15px] md:text-[13px] sm:text-[14px] font-[500] mt-4 px-4">
-            Ilmiy ishlar bo'yicha direktor o'rin bosari
-          </p>
-          <p className="text-center lg:text-[15px] md:text-[13px] sm:text-[14px] mt-2">
-            +998 71 277 69 83
-          </p>
-          <p className="text-center md:text-[13px] md:mt-8 lg:mt-8 mb-4 ">
             Juma kuni,10:00 - 12:00
           </p>
         </div>
