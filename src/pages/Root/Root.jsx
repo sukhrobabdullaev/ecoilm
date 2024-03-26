@@ -55,69 +55,7 @@ export default function Root() {
           <News />
         </div>
       </div>
-      {/* Biz haqimizda */}
-      <div className="about_section bg3 mt-[100px] px-3 py-6 shadow-lg rounded-xl w-full">
-        <p className="text-[#fefefe] text-center text-3xl font-bold">
-          Biz haqimizda
-        </p>
-        <p className="text-[#fefefe] text-xl text-center font-semibold pt-5">
-          Atrof muhit va atbiatni muhofaza qilish texnologiyalari ilmiy tadqiqot
-          instituti haqida qisqacha ma'lumot
-        </p>
-        <div className="grid lg:grid-cols-2 gap-10 text-xl">
-          <div className="col-span-1">
-            <img
-              className="px-1 rounded-tl-[20px] hidden lg:flex rounded-bl-[20px] w-[600px] h-[450px] pt-4"
-              src="./assets/img/glavniy.JPG"
-              alt=""
-            />
-          </div>
-          <div className="col-span-1">
-            <p className="text-[#fefefe] pt-5 text-xl hidden lg:flex text-center font-semibold">
-              Atrof muhit va atbiatni muhofaza qilish texnologiyalari ilmiy
-              tadqiqot instituti haqida
-            </p>
-            <p className="text-[#fefefe] text-[13px] lg:pt-5 text-justify pr-3">
-              {matn.slice(0, 1300)}
-            </p>
-          </div>
-        </div>
-      </div>
-      <div className="md:max-w-[1200px] mx-auto mt-10 ">
-        <p className="text-[30px] text-center">Hamkorlar</p>
-        <div className="mt-[40px] flex md:flex-row flex-col items-center py-10  gap-8">
-          <img
-            className="md:w-[180px] md:h-[180px] w-[200px] object-cover"
-            src="./assets/img/misteo.png"
-            alt=""
-          />
-          <img
-            className="md:w-[180px] md:h-[180px] w-[200px] object-cover"
-            src="./assets/img/superMap.png"
-            alt=""
-          />
-          <img
-            className="md:w-[180px] md:h-[180px] w-[200px] object-cover"
-            src="./assets/img/hamkor.png"
-            alt=""
-          />
-          <img
-            className="md:w-[180px] md:h-[180px] w-[200px] object-cover"
-            src="./assets/img/geostry.png"
-            alt=""
-          />
-          <img
-            className="md:w-[180px] md:h-[180px] w-[200px] object-cover"
-            src="./assets/img/GIZ_Uzbekistan.png"
-            alt=""
-          />
-          <img
-            className="md:w-[180px] md:h-[180px] w-[200px] object-cover"
-            src="./assets/img/Uzbek-Japanese.png"
-            alt=""
-          />
-        </div>
-      </div>
+
       <div className="jurnallar_section mt-[50px]">
         <p className="font-normal text-center text-[30px] md:text-[40px] mt-3">
           Jurnallar
@@ -189,6 +127,69 @@ export default function Root() {
               </Link>
             </div>
           </div>
+        </div>
+      </div>
+      {/* Biz haqimizda */}
+      <div className="about_section bg3 mt-[100px] px-3 py-6 shadow-lg rounded-xl w-full">
+        <p className="text-[#fefefe] text-center text-3xl font-bold">
+          Biz haqimizda
+        </p>
+        <p className="text-[#fefefe] text-xl text-center font-semibold pt-5">
+          Atrof muhit va atbiatni muhofaza qilish texnologiyalari ilmiy tadqiqot
+          instituti haqida qisqacha ma'lumot
+        </p>
+        <div className="grid lg:grid-cols-2 gap-10 text-xl">
+          <div className="col-span-1">
+            <img
+              className="px-1 rounded-tl-[20px] hidden lg:flex rounded-bl-[20px] w-[600px] h-[450px] pt-4"
+              src="./assets/img/glavniy.JPG"
+              alt=""
+            />
+          </div>
+          <div className="col-span-1">
+            <p className="text-[#fefefe] pt-5 text-xl hidden lg:flex text-center font-semibold">
+              Atrof muhit va atbiatni muhofaza qilish texnologiyalari ilmiy
+              tadqiqot instituti haqida
+            </p>
+            <p className="text-[#fefefe] text-[13px] lg:pt-5 text-justify pr-3">
+              {matn.slice(0, 1300)}
+            </p>
+          </div>
+        </div>
+      </div>
+      <div className="md:max-w-[1200px] mx-auto mt-10 ">
+        <p className="text-[30px] text-center">Hamkorlar</p>
+        <div className="mt-[40px] flex md:flex-row flex-col items-center py-10  gap-8">
+          <img
+            className="md:w-[180px] md:h-[180px] w-[200px] object-cover"
+            src="./assets/img/misteo.png"
+            alt=""
+          />
+          <img
+            className="md:w-[180px] md:h-[180px] w-[200px] object-cover"
+            src="./assets/img/superMap.png"
+            alt=""
+          />
+          <img
+            className="md:w-[180px] md:h-[180px] w-[200px] object-cover"
+            src="./assets/img/hamkor.png"
+            alt=""
+          />
+          <img
+            className="md:w-[180px] md:h-[180px] w-[200px] object-cover"
+            src="./assets/img/geostry.png"
+            alt=""
+          />
+          <img
+            className="md:w-[180px] md:h-[180px] w-[200px] object-cover"
+            src="./assets/img/GIZ_Uzbekistan.png"
+            alt=""
+          />
+          <img
+            className="md:w-[180px] md:h-[180px] w-[200px] object-cover"
+            src="./assets/img/Uzbek-Japanese.png"
+            alt=""
+          />
         </div>
       </div>
     </div>
