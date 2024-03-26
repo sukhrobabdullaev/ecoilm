@@ -11,7 +11,7 @@ const LatestNews = () => {
     const fetchData = async () => {
       try {
         const response = await axios.get(
-          "https://ecoilm.uz/api/news/latest/one"
+          "https://idrisov.uz/api/news/latest/one"
         );
         setData(response.data);
       } catch (error) {

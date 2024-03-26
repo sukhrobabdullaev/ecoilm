@@ -13,7 +13,7 @@ export default function Userprofile() {
   useEffect(() => {
     axios({
       method: "GET",
-      url: `https://ecoilm.uz/api/${param}`,
+      url: `https://idrisov.uz/api/${param}`,
     })
       .then((res) => {
         setSingle(res?.data);
