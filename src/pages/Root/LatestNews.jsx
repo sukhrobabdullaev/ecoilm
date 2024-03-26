@@ -9,7 +9,7 @@ const LatestNews = () => {
     const fetchData = async () => {
       try {
         const response = await axios.get(
-          "http://45.55.64.16:8001/api/news/latest/one"
+          "https://www.idrisov.uz/api/news/latest/one"
         );
         setData(response.data);
       } catch (error) {

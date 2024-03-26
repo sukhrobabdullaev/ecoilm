@@ -8,7 +8,7 @@ export default function New() {
   useEffect(() => {
     axios({
       method: "GET",
-      url: "http://45.55.64.16:8001/api",
+      url: "https://www.idrisov.uz/api",
     })
       .then((res) => {
         setPeople(res?.data);
@@ -29,7 +29,7 @@ export default function New() {
                 <div key={index} className="col-span-4 ">
                   <div className="bg-white drop-shadow-md pb-4 ">
                     <img
-                      src={`http://45.55.64.16:8001/media/news_images${item.image}`}
+                      src={`https://www.idrisov.uz/media/news_images${item.image}`}
                       alt="vfgbh"
                     />
                     <p className="p-3 text-center sm:text-lg sm:font-semibold md:text-lg md:font-semibold lg:text-xl lg:font-semibold xl:text-2xl xl:font-semibold 2xl:text-2xl 2xl:font-bold">

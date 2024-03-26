@@ -7,9 +7,7 @@ export default function Jurnallar() {
   useEffect(() => {
     const fetchData = async () => {
       try {
-        const response = await axios.get(
-          "http://45.55.64.16:8001/api/journals"
-        );
+        const response = await axios.get("https://www.idrisov.uz/api/journals");
         setData(response.data);
       } catch (error) {
         console.error("Error fetching data:", error);
