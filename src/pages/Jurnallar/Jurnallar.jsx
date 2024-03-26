@@ -19,7 +19,7 @@ export default function Jurnallar() {
   console.log(data);
   return (
     <div className="container">
-      <div className="grid lg:grid-cols-12 md:grid-cols-8 pb-20 mt-3 px-6 lg:gap-20 md:gap-14 gap-10">
+      <div className="grid lg:grid-cols-12 md:grid-cols-8 pb-20 mt-3 px-6 lg:gap-20 md:gap-14 gap-10 md:max-w-[1200px] mx-auto">
         {data.map((el) => (
           <div className="col-span-4" key={el.id}>
             <img
