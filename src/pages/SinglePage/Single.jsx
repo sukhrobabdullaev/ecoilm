@@ -12,7 +12,7 @@ export default function Userprofile() {
   useEffect(() => {
     axios({
       method: "GET",
-      url: `https://www.idrisov.uz/api/${ppeople}`,
+      url: `https://idrisov.uz/api/${ppeople}`,
     })
       .then((res) => {
         setSingle(res?.data);

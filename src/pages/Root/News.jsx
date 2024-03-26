@@ -9,7 +9,7 @@ const News = () => {
   useEffect(() => {
     const fetchData = async () => {
       try {
-        const response = await axios.get("https://www.idrisov.uz/api");
+        const response = await axios.get("https://idrisov.uz/api");
         setData(response.data);
       } catch (error) {
         console.error("Error fetching data:", error);
