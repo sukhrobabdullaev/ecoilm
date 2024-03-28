@@ -23,7 +23,6 @@ const ElonlarThree = () => {
         const response = await axios.get(
           "https://ecoilm.uz/api/elonlar/latest/three"
         );
-        console.log(response.data);
         setData(response.data);
       } catch (error) {
         console.error("Error fetching data:", error);

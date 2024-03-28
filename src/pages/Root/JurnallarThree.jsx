@@ -20,7 +20,6 @@ const JurnallarThree = () => {
         const response = await axios.get(
           "https://ecoilm.uz/api/journals/latest/four"
         );
-        console.log(response.data);
         setData(response.data);
       } catch (error) {
         console.error("Error fetching data:", error);

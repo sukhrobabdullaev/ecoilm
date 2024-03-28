@@ -29,6 +29,7 @@ import NewsSingle from "./pages/NewsSingle/Single";
 import ElonlarSingle from "./pages/ElonlarSingle/Single";
 import LoyihalarSingle from "./pages/LoyihalarSingle/Single";
 import IlmiyKengashSingle from "./pages/KengashSingle/Single";
+import Yangiliklar from "./pages/Yangiliklar/Yangiliklar";
 
 const root = ReactDOM.createRoot(document.getElementById("root"));
 root.render(
@@ -42,7 +43,7 @@ root.render(
         <Route path="/raxbaryat" element={<Rahbaryat />} />
         <Route path="/boglanish" element={<Boglanish />} />
         <Route path="/loyhalar" element={<Loyhalar />} />
-        <Route path="/yangiliklar" element={<LatestNews />} />
+        <Route path="/yangiliklar" element={<Yangiliklar />} />
         <Route path="/elonlar" element={<Elonlar />} />
         <Route path="/jurnallar" element={<Jurnallar />} />
         <Route path="/maqola" element={<Maqola />} />

@@ -11,7 +11,9 @@ export default function Kengash() {
   useEffect(() => {
     const fetchData = async () => {
       try {
-        const response = await axios.get("https://ecoilm.uz/api/ilmkengashi");
+        const response = await axios.get(
+          "https://ecoilm.uz/api/ilmkengashi"
+        );
         setData(response.data);
       } catch (error) {
         console.error("Error fetching data:", error);

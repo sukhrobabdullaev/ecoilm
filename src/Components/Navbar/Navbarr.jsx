@@ -9,6 +9,7 @@ const Navbarr = () => {
   const [dropdownVisibleYangilik, setDropdownVisibleYangilik] = useState(false);
   const [dropdownVisibleJurnallar, handleDropdownVisibleJurnallar] =
     useState(false);
+  const [isMenu, setIsMenu] = useState(false);
 
   const handleChange = (value) => {
     console.log(`selected ${value}`);
@@ -18,49 +19,73 @@ const Navbarr = () => {
     setDropdownVisible(flag);
   };
 
+  const closeMenu = () => {
+    setIsMenu(false);
+  };
+
   const dropdownMenu = (
     <Menu className="">
       <Menu.Item key="1">
-        <Link to="/tuzulma">Tuzilma</Link>
+        <Link to="/tuzulma" onClick={closeMenu}>
+          Tuzilma
+        </Link>
       </Menu.Item>
       <Menu.Item key="2">
-        <Link to="/labaratoriya">Laboratoriya va bo'limlar</Link>
+        <Link to="/labaratoriya" onClick={closeMenu}>
+          Laboratoriya va bo'limlar
+        </Link>
       </Menu.Item>
       <Menu.Item key="3">
-        <Link to="/raxbaryat">Rahbaryat</Link>
+        <Link to="/raxbaryat" onClick={closeMenu}>
+          Rahbaryat
+        </Link>
       </Menu.Item>
       <Menu.Item key="4">
-        <Link to="/boglanish">Bog'lanish</Link>
+        <Link to="/boglanish" onClick={closeMenu}>
+          Bog'lanish
+        </Link>
       </Menu.Item>
       <Menu.Item key="5">
-        <Link to="/loyhalar">Loyihalar</Link>
+        <Link to="/loyhalar" onClick={closeMenu}>
+          Loyihalar
+        </Link>
       </Menu.Item>
     </Menu>
   );
   const yangililarMenu = (
     <Menu className="">
       <Menu.Item key="1">
-        <Link to="/yangiliklar">Yangiliklar</Link>
+        <Link to="/yangiliklar" onClick={closeMenu}>
+          Yangiliklar
+        </Link>
       </Menu.Item>
       <Menu.Item key="2">
-        <Link to="/elonlar">E'lonlar</Link>
+        <Link to="/elonlar" onClick={closeMenu}>
+          E'lonlar
+        </Link>
+      </Menu.Item>
+    </Menu>
+  );
+  const jurnallarMenu = (
+    <Menu className="">
+      <Menu.Item key="1">
+        <Link to="/jurnallar" onClick={closeMenu}>
+          Jurnallar
+        </Link>
+      </Menu.Item>
+      <Menu.Item key="2">
+        <Link to="/maqola" onClick={closeMenu}>
+          Maqola chop etish
+        </Link>
+      </Menu.Item>
+      <Menu.Item key="2">
+        <Link to="/kutubxona" onClick={closeMenu}>
+          Online kutubxona
+        </Link>
       </Menu.Item>
     </Menu>
   );
 
-  const jurnallarMenu = (
-    <Menu className="">
-      <Menu.Item key="1">
-        <Link to="/jurnallar">Jurnallar</Link>
-      </Menu.Item>
-      <Menu.Item key="2">
-        <Link to="/maqola">Maqola chop etish</Link>
-      </Menu.Item>
-      <Menu.Item key="2">
-        <Link to="/kutubxona">Online kutubxona</Link>
-      </Menu.Item>
-    </Menu>
-  );
   return (
     <div>
       <div className="scroll-left">
@@ -87,41 +112,66 @@ const Navbarr = () => {
                 <span>ILMIY-TADQIQOT INSTITUTI</span>
               </p>
             </Link>
-            <button
-              data-collapse-toggle="navbar-default"
-              type="button"
-              className="md:inline-flex items-center p-2 w-10 h-10 justify-center text-sm text-gray-500 rounded-lg lg:hidden hover:bg-gray-100 focus:outline-none focus:ring-2 focus:ring-gray-200 dark:text-gray-400 dark:hover:bg-gray-700 dark:focus:ring-gray-600"
-              aria-controls="navbar-default"
-              aria-expanded="false"
-            >
-              <span className="sr-only">Open main menu</span>
-              <svg
-                className="w-5 h-5"
-                aria-hidden="true"
-                xmlns="http://www.w3.org/2000/svg"
-                fill="none"
-                viewBox="0 0 17 14"
+            {isMenu ? (
+              <button
+                type="button"
+                className="md:inline-flex items-center p-2 w-10 h-10 justify-center text-sm text-gray-500 rounded-lg lg:hidden hover:bg-gray-100 focus:outline-none focus:ring-2 focus:ring-gray-200 dark:text-gray-400 dark:hover:bg-gray-700 dark:focus:ring-gray-600"
+                onClick={() => setIsMenu(false)}
               >
-                <path
-                  stroke="currentColor"
-                  strokeLinecap="round"
-                  strokeLinejoin="round"
-                  strokeWidth="2"
-                  d="M1 1h15M1 7h15M1 13h15"
-                />
-              </svg>
-            </button>
+                <span className="sr-only">Close main menu</span>
+                <svg
+                  className="w-5 h-5"
+                  aria-hidden="true"
+                  xmlns="http://www.w3.org/2000/svg"
+                  fill="none"
+                  viewBox="0 0 14 14"
+                >
+                  <path
+                    stroke="currentColor"
+                    strokeLinecap="round"
+                    strokeLinejoin="round"
+                    strokeWidth="2"
+                    d="M1 1l12 12M13 1L1 13"
+                  />
+                </svg>
+              </button>
+            ) : (
+              <button
+                type="button"
+                className="md:inline-flex items-center p-2 w-10 h-10 justify-center text-sm text-gray-500 rounded-lg lg:hidden hover:bg-gray-100 focus:outline-none focus:ring-2 focus:ring-gray-200 dark:text-gray-400 dark:hover:bg-gray-700 dark:focus:ring-gray-600"
+                onClick={() => setIsMenu(true)}
+              >
+                <span className="sr-only">Open main menu</span>
+                <svg
+                  className="w-5 h-5"
+                  aria-hidden="true"
+                  xmlns="http://www.w3.org/2000/svg"
+                  fill="none"
+                  viewBox="0 0 17 14"
+                >
+                  <path
+                    stroke="currentColor"
+                    strokeLinecap="round"
+                    strokeLinejoin="round"
+                    strokeWidth="2"
+                    d="M1 1h15M1 7h15M1 13h15"
+                  />
+                </svg>
+              </button>
+            )}
+
             <div
-              className="hidden w-full md:hidden lg:flex lg:flex-row lg:gap-10 md:justify-end"
-              id="navbar-default"
+              className={`w-full z-50 absolute top-[100px] left-0 lg:static lg:flex lg:flex-row lg:gap-10 md:justify-end ${
+                isMenu ? "" : "hidden"
+              }`}
             >
-              <ul className="font-medium flex flex-col items-center p-4 md:p-0 mt-4 border border-gray-100 rounded-lg bg-gray-50 md:flex-row md:space-x-8 rtl:space-x-reverse md:mt-0 md:border-0 md:bg-white dark:bg-gray-800 md:dark:bg-gray-900 dark:border-gray-700">
+              <ul className="font-medium flex flex-col items-center p-4 lg:p-0 md:mt-4  bg-gray-50 lg:flex-row lg:space-x-8 rtl:space-x-reverse lg:mt-0 lg:border-0 lg:bg-white dark:bg-gray-800 lg:dark:bg-gray-900 dark:border-gray-700">
                 <li className="">
                   <Dropdown
                     overlay={dropdownMenu}
                     trigger={["click"]}
-                    visible={dropdownVisible}
-                    onVisibleChange={handleDropdownVisibleChange}
+                    open={dropdownVisible}
+                    onOpenChange={handleDropdownVisibleChange}
                     className="cursor-pointer"
                   >
                     <a
@@ -137,8 +187,8 @@ const Navbarr = () => {
                   <Dropdown
                     overlay={yangililarMenu}
                     trigger={["click"]}
-                    visible={dropdownVisibleYangilik}
-                    onVisibleChange={setDropdownVisibleYangilik}
+                    open={dropdownVisibleYangilik}
+                    onOpenChange={setDropdownVisibleYangilik}
                     className="cursor-pointer"
                   >
                     <a
@@ -154,8 +204,8 @@ const Navbarr = () => {
                   <Dropdown
                     overlay={jurnallarMenu}
                     trigger={["click"]}
-                    visible={dropdownVisibleJurnallar}
-                    onVisibleChange={handleDropdownVisibleJurnallar}
+                    open={dropdownVisibleJurnallar}
+                    onOpenChange={handleDropdownVisibleJurnallar}
                     className="cursor-pointer"
                   >
                     <a
@@ -171,6 +221,7 @@ const Navbarr = () => {
                   <Link
                     to={"/kengash"}
                     className="block py-2 px-3 text-gray-900 rounded hover:bg-gray-100 md:hover:bg-transparent md:border-0  md:p-0 dark:text-white "
+                    onClick={closeMenu}
                   >
                     Ilmiy kengash
                   </Link>
@@ -179,28 +230,31 @@ const Navbarr = () => {
                   <a
                     href="#"
                     className="block py-2 px-3 text-gray-900 rounded hover:bg-gray-100 md:hover:bg-transparent md:border-0  md:p-0 dark:text-white "
+                    onClick={closeMenu}
                   >
                     Ilmiy texnik kengash
                   </a>
                 </li>
               </ul>
-              <Select
-                defaultValue="Uz"
-                style={{
-                  width: 60,
-                }}
-                onChange={handleChange}
-                options={[
-                  {
-                    value: "uz",
-                    label: "Uz",
-                  },
-                  {
-                    value: "eng",
-                    label: "Eng",
-                  },
-                ]}
-              />
+              <div className=" bg-gray-800 flex items-start justify-center lg:bg-gray-900 border-gray-700 lg:pb-0 pb-4">
+                <Select
+                  defaultValue="Uz"
+                  style={{
+                    width: 60,
+                  }}
+                  onChange={handleChange}
+                  options={[
+                    {
+                      value: "uz",
+                      label: "Uz",
+                    },
+                    {
+                      value: "eng",
+                      label: "Eng",
+                    },
+                  ]}
+                />
+              </div>
             </div>
           </div>
         </nav>

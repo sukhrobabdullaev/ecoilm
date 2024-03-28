@@ -1,58 +1,89 @@
-import React, { useEffect, useState } from "react";
 import axios from "axios";
-import { Link } from "react-router-dom";
+import { IoTimeOutline } from "react-icons/io5";
+import React, { useEffect, useState } from "react";
+import { useNavigate } from "react-router-dom";
+import LatestNews from "../Root/LatestNews";
 
-export default function New() {
-  const [people, setPeople] = useState([]);
+import "./news.css";
 
+const Yangiliklar = () => {
+  const [data, setData] = useState([]);
+
+  const navigate = useNavigate();
   useEffect(() => {
-    axios({
-      method: "GET",
-      url: "https://ecoilm.uz/api",
-    })
-      .then((res) => {
-        setPeople(res?.data);
-        console.log("data : " + res?.data);
-      })
-      .catch((err) => {
-        console.log(err);
-      });
+    const fetchData = async () => {
+      try {
+        const response = await axios.get("https://ecoilm.uz/api");
+        setData(response.data);
+      } catch (error) {
+        console.error("Error fetching data:", error);
+      }
+    };
+
+    fetchData();
   }, []);
 
+  const formatDate = (dateString) => {
+    const date = new Date(dateString);
+    const day = date.getUTCDate();
+    const month = date.getUTCMonth() + 1; // Months are zero-based, so add 1
+    const year = date.getUTCFullYear();
+    return `${day < 10 ? "0" : ""}${day}.${
+      month < 10 ? "0" : ""
+    }${month}.${year}`;
+  };
+
   return (
-    <div className="grid gap-5 px-10 py-7 grid-cols-12">
-      <>
-        {!!people ? (
-          <>
-            {people.map((item, index) => {
-              return (
-                <div key={index} className="col-span-4 ">
-                  <div className="bg-white drop-shadow-md pb-4 ">
-                    <img src={item.image} alt="vfgbh" />
-                    <p className="p-3 text-center sm:text-lg sm:font-semibold md:text-lg md:font-semibold lg:text-xl lg:font-semibold xl:text-2xl xl:font-semibold 2xl:text-2xl 2xl:font-bold">
-                      {item.title}
-                    </p>
-                    <p className="text-sm px-3 py-3">
-                      {item.content.slice(0, 70)}...
-                    </p>
-                    <p className="px-3 py-3">{item.created_at.slice(0, 10)}</p>
-                    <Link
-                      className="bg-blue-500 text-white px-3 py-1 rounded-lg ms-[270px] mb-5"
-                      to={`/singlenews/${item.id}`}
-                    >
-                      Batafsil
-                    </Link>
-                  </div>
+    <div className="container">
+      <div className="flex flex-col md:gap-4 gap-1 pt-4">
+        <div class="flex items-center justify-center">
+          <div class="flex-grow border-t border-black"></div>
+          <p class="text-center px-4 lg:text-[32px] text-[20px]">
+            SO'NGI YANGILIKLAR
+          </p>
+          <div class="flex-grow border-t border-black"></div>
+        </div>
+        <span className="text-center md:text-lg text-black/50 block">
+          ATROF-MUHIT VA TABIATNI MUHOFAZA QILISH TEXNOLOGIYALARI ILMIY-TADQIQOT
+          INSTITUTI YANGILIKLARI
+        </span>
+      </div>
+      <div className="flex md:flex-row flex-col items-center gap-10 my-10">
+        <LatestNews />
+        <div className="flex flex-col bg-white gap-4 overflow-x-scroll md:overflow-y-scroll custom-scrollbar md:h-screen">
+          {data.map((el) => (
+            <div
+              className="md:w-[350px] w-[350px] h-auto rounded-xl bg-white shadow-2xl hover:shadow-xl cursor-pointer p-4 flex flex-col gap-2"
+              key={el.id}
+            >
+              <img
+                className="md:w-full md:h-[250px]   rounded-tr-xl rounded-tl-xl object-cover"
+                src={el.image}
+                alt={el.title}
+              />
+              <h3 className="text-lg font-semibold line-clamp-1">{el.title}</h3>
+              <p className="text-[14px] line-clamp-2">{el.content}</p>
+              <div className="flex items-center justify-between">
+                <div className="flex gap-1 items-center">
+                  <IoTimeOutline className="text-gray-500" size={20} />
+                  <p className="text-gray-500 font-semibold">
+                    {formatDate(el.created_at)}
+                  </p>
                 </div>
-              );
-            })}
-          </>
-        ) : (
-          <>
-            <p>loading...</p>
-          </>
-        )}
-      </>
+                <button
+                  type="button"
+                  className=" text-white bg-green-500 hover:bg-green-600 font-medium rounded-lg text-sm px-4 py-2"
+                  onClick={() => navigate(`/news/${el.id}`)}
+                >
+                  Batafsil
+                </button>
+              </div>
+            </div>
+          ))}
+        </div>
+      </div>
     </div>
   );
-}
+};
+
+export default Yangiliklar;

@@ -22,7 +22,6 @@ export default function Elonlar() {
     const fetchData = async () => {
       try {
         const response = await axios.get("https://ecoilm.uz/api/elonlar");
-        console.log(response.data);
         setData(response.data);
       } catch (error) {
         console.error("Error fetching data:", error);
