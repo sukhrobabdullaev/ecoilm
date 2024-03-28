@@ -13,7 +13,7 @@ export default function LoyihalarSingle() {
   useEffect(() => {
     axios({
       method: "GET",
-      url: `http://45.55.64.16:8001/api/loyihalar/${param}`,
+      url: `https://ecoilm.uz/api/loyihalar/${param}`,
     })
       .then((res) => {
         setSingle(res?.data);

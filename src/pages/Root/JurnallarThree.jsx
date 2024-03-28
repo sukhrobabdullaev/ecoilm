@@ -18,7 +18,7 @@ const JurnallarThree = () => {
     const fetchData = async () => {
       try {
         const response = await axios.get(
-          "http://45.55.64.16:8001/api/journals/latest/four"
+          "https://ecoilm.uz/api/journals/latest/four"
         );
         console.log(response.data);
         setData(response.data);

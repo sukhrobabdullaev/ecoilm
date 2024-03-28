@@ -21,7 +21,7 @@ export default function Elonlar() {
   useEffect(() => {
     const fetchData = async () => {
       try {
-        const response = await axios.get("http://45.55.64.16:8001/api/elonlar");
+        const response = await axios.get("https://ecoilm.uz/api/elonlar");
         console.log(response.data);
         setData(response.data);
       } catch (error) {
