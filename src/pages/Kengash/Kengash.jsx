@@ -1,61 +1,68 @@
-import React, { useState } from "react";
-import { Link } from "react-router-dom";
+import axios from "axios";
+import React, { useEffect, useState } from "react";
+import { useNavigate } from "react-router-dom";
 import { IoTimeOutline } from "react-icons/io5";
-import { Pagination } from "antd";
+import { formatDate } from "../Root/News";
 
 export default function Kengash() {
-  const [current, setCurrent] = useState(3);
-  const onChange = (page) => {
-    // console.log(page);
-    setCurrent(page);
-  };
+  const [data, setData] = useState([]);
+  const navigate = useNavigate();
+
+  useEffect(() => {
+    const fetchData = async () => {
+      try {
+        const response = await axios.get(
+          "http://45.55.64.16:8001/api/ilmkengashi"
+        );
+        setData(response.data);
+      } catch (error) {
+        console.error("Error fetching data:", error);
+      }
+    };
+
+    fetchData();
+  }, []);
   return (
-    <div className="">
-      <h1 className="lg:text-[60px] md:text-[25px] sm:text-[20px] font-bold text-[#58c77fe3] text-center py-5">
-        Ilmiy kengash
-      </h1>
-      <div className=" grid grid-cols-1 sm:grid-cols-1 md:grid-cols-2 lg:grid-cols-2 gap-3">
-        <div className="md:ml-[20%] w-[300px] md:w-[460px] md:h-[430px] mx-auto h-[450px]  rounded-md rounded-tr-md bg-white  shadow-2xl hover:shadow-xl cursor-pointer">
-          <img
-            className="w-full rounded-tl-md rounded-tr-md-md rounded-tr-md"
-            src="./assets/img/photo_2023-08-16_13-16-11-Xr23bArNs-transformed (1) 2 (1).png"
-            alt="assets"
-          />
-          <p className="lg:text-[17px]  md:text-[15px] sm:text-[14px] pt-2 px-2 font-semibold">
-            Texnika fanlari boʼyicha falsafa doktori (PhD) ilmiy darajasi –
-            PhD.18/30.11.2022.T.153.01 raqamli ixtisosligini beruvchi ilmiy
-            kengash faoliyati yoʼlga qoʼyildi.
-          </p>
-          <div className="flex flex-row px-3 items-center justify-between py-3">
-            <div className="flex flex-row items-center">
-              <IoTimeOutline className="text-gray-500" size={25} />
-              <p className="text-gray-500 font-semibold pl-2">21.11.2024</p>
-            </div>
-            <p className="bg-[#00df9a] text-white rounded-lg w-[80px] h-[40px] text-[18px] text-center pt-2 hover:scale-105 duration-300">
-              <Link to={"/news"}>Batafsil</Link>
+    <div className="flex  flex-col items-center justify-center my-10 gap-5">
+      <div className="container">
+        <div className="flex flex-col md:gap-4 gap-1 mb-6">
+          <div class="flex items-center justify-center">
+            <div class="flex-grow border-t border-black"></div>
+            <p class="text-center px-4 lg:text-[32px] text-[20px]">
+              ILMIY KENGASH
             </p>
+            <div class="flex-grow border-t border-black"></div>
           </div>
         </div>
-        <div className="md:ml-[20%] w-[300px]  md:w-[460px] md:h-[430px] mx-auto h-[430px]  rounded-md rounded-tr-md bg-white  shadow-2xl hover:shadow-xl cursor-pointer">
-          <img
-            className="w-full rounded-tl-md rounded-tr-md-md rounded-tr-md"
-            src="./assets/img/photo_2023-08-16_13-16-11-Xr23bArNs-transformed (1) 2 (1).png"
-            alt="assets"
-          />
-          <p className="lg:text-[17px]  md:text-[15px] sm:text-[14px] pt-2 px-2 font-semibold">
-            Texnika fanlari boʼyicha falsafa doktori (PhD) ilmiy darajasi –
-            PhD.18/30.11.2022.T.153.01 raqamli ixtisosligini beruvchi ilmiy
-            kengash faoliyati yoʼlga qoʼyildi.
-          </p>
-          <div className="flex flex-row px-3 items-center justify-between py-3">
-            <div className="flex flex-row items-center">
-              <IoTimeOutline className="text-gray-500" size={25} />
-              <p className="text-gray-500 font-semibold pl-2">21.11.2024</p>
+        <div className="flex md:flex-row flex-wrap flex-col gap-4 items-center">
+          {data.map((el) => (
+            <div
+              className="md:w-[550px] mx-auto h-auto rounded-xl bg-white shadow-2xl hover:shadow-xl cursor-pointer p-4 flex flex-col gap-2"
+              key={el.id}
+            >
+              <img
+                className="md:w-[500px] mx-auto md:h-[250px] rounded-tr-xl rounded-tl-xl object-cover"
+                src={el.image}
+                alt={el.title}
+              />
+              <p className="text-[14px] line-clamp-3">{el.content}</p>
+              <div className="flex items-center justify-between">
+                <div className="flex gap-1 items-center">
+                  <IoTimeOutline className="text-gray-500" size={20} />
+                  <p className="text-gray-500 font-semibold">
+                    {formatDate(el.created_at)}
+                  </p>
+                </div>
+                <button
+                  type="button"
+                  className=" text-white bg-blue-500 hover:bg-blue-600 font-medium rounded-lg text-sm px-4 py-2"
+                  onClick={() => navigate(`/kengash/${el.id}`)}
+                >
+                  Batafsil
+                </button>
+              </div>
             </div>
-            <p className="bg-[#00df9a] text-white rounded-lg w-[80px] h-[40px] text-[18px] text-center pt-2 hover:scale-105 duration-300">
-              <Link to={"/news"}>Batafsil</Link>
-            </p>
-          </div>
+          ))}
         </div>
       </div>
     </div>

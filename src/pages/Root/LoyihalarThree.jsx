@@ -17,11 +17,12 @@ const LoyihalarThree = () => {
   const [data, setData] = useState([]);
 
   const navigate = useNavigate();
+
   useEffect(() => {
     const fetchData = async () => {
       try {
         const response = await axios.get(
-          "https://ecoilm.uz/api/loyihalar/latest/three"
+          "http://45.55.64.16:8001/api/loyihalar/latest/three"
         );
         setData(response.data);
       } catch (error) {
@@ -52,7 +53,7 @@ const LoyihalarThree = () => {
             <button
               type="button"
               className=" text-white bg-green-500 hover:bg-green-600 font-medium rounded-lg text-sm px-4 py-2"
-              // onClick={() => navigate(`/news/${el.id}`)}
+              onClick={() => navigate(`/loyihalar/${el.id}`)}
             >
               Batafsil
             </button>

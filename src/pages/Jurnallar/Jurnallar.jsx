@@ -7,7 +7,9 @@ export default function Jurnallar() {
   useEffect(() => {
     const fetchData = async () => {
       try {
-        const response = await axios.get("https://ecoilm.uz/api/journals");
+        const response = await axios.get(
+          "http://45.55.64.16:8001/api/journals"
+        );
         setData(response.data);
       } catch (error) {
         console.error("Error fetching data:", error);
@@ -19,29 +21,29 @@ export default function Jurnallar() {
 
   return (
     <div className="flex py-8 justify-center flex-wrap flex-col gap-4 items-center">
-      <div className="flex flex-col md:gap-4 gap-1 pt-10">
-        <div class="flex items-center justify-center">
-          <div class="flex-grow border-t border-black"></div>
-          <p class="text-center px-4 lg:text-[32px] text-[20px]">JURNALLAR</p>
-          <div class="flex-grow border-t border-black"></div>
+      <div className="container">
+        <div className="flex flex-col md:gap-4 gap-1 pt-10">
+          <div class="flex items-center justify-center">
+            <div class="flex-grow border-t border-black"></div>
+            <p class="text-center px-4 lg:text-[32px] text-[20px]">JURNALLAR</p>
+            <div class="flex-grow border-t border-black"></div>
+          </div>
+          <span className="text-center md:text-lg text-black/50 block">
+            EKOLOGIYA XABARNOMASI JURNALINING SO'NGI SONLARI
+          </span>
         </div>
-        <span className="text-center md:text-lg text-black/50 block">
-          EKOLOGIYA XABARNOMASI JURNALINING SO'NGI SONLARI
-        </span>
-      </div>
-      <div className="flex flex-wrap  gap-10">
-        {data &&
-          data.map((el) => (
+        <div className="flex flex-wrap gap-4 pb-10 py-4">
+          {data.map((el) => (
             <div
-              className="shadow-lg hover:scale-[1.01]  rounded-md"
+              className="shadow-lg hover:scale-[1.01] transition-all delay-100 border border-black/30 rounded-md"
               key={el.id}
             >
               <img
-                className="shadow-lg md:w-[300px] h-full rounded-md"
-                src="/assets/img/Image [img-fluid] (3).png"
+                className="md:w-[300px] h-auto object-cover mx-auto rounded-t-md"
+                src={el.image}
                 alt=""
               />
-              <p className="md:text-lg flex items-center justify-between text-center  p-2 ">
+              <p className="md:text-base text-center  m-2 font-semibold">
                 {el.title}
               </p>
               <div className="flex justify-end mb-2 mr-2">
@@ -62,6 +64,7 @@ export default function Jurnallar() {
               </div>
             </div>
           ))}
+        </div>
       </div>
     </div>
   );

@@ -10,21 +10,25 @@ import {
 } from "react-router-dom";
 import "./index.css";
 import Tuzulma from "./pages/Tuzulma/Tuzulma";
-import Vazifa from "./pages/Vazifa/Vazifa";
+// import Vazifa from "./pages/Vazifa/Vazifa";
 import Labaratoriye from "./pages/Labaratoriya/Labaratoriye";
 import Rahbaryat from "./pages/Rahbaryat/Rahbaryat";
 import Boglanish from "./pages/Bog'lanish/Bog'lanish";
 import Loyhalar from "./pages/Loyihalar/Loyhalar";
-import Yangiliklar from "./pages/Yangiliklar/Yangiliklar";
 import Elonlar from "./pages/Elonlar/Elonlar";
 import Jurnallar from "./pages/Jurnallar/Jurnallar";
 import Maqola from "./pages/Maqola/Maqola";
 import Kutubxona from "./pages/Kutubxona/Kutubxona";
 import Root from "./pages/Root/Root";
 import Kengash from "./pages/Kengash/Kengash";
+
 import "animate.css";
-import Single from "./pages/SinglePage/Single";
+
 import LatestNews from "./pages/Root/LatestNews";
+import NewsSingle from "./pages/NewsSingle/Single";
+import ElonlarSingle from "./pages/ElonlarSingle/Single";
+import LoyihalarSingle from "./pages/LoyihalarSingle/Single";
+import IlmiyKengashSingle from "./pages/KengashSingle/Single";
 
 const root = ReactDOM.createRoot(document.getElementById("root"));
 root.render(
@@ -33,7 +37,7 @@ root.render(
       <Route path="/" element={<App />}>
         <Route index path="/" element={<Root />} />
         <Route path="/tuzulma" element={<Tuzulma />} />
-        <Route path="/vazifa" element={<Vazifa />} />
+        {/* <Route path="/vazifa" element={<Vazifa />} /> */}
         <Route path="/labaratoriya" element={<Labaratoriye />} />
         <Route path="/raxbaryat" element={<Rahbaryat />} />
         <Route path="/boglanish" element={<Boglanish />} />
@@ -44,7 +48,10 @@ root.render(
         <Route path="/maqola" element={<Maqola />} />
         <Route path="/kutubxona" element={<Kutubxona />} />
         <Route path="/kengash" element={<Kengash />} />
-        <Route path="/news/:id" element={<Single />} />
+        <Route path="/news/:id" element={<NewsSingle />} />
+        <Route path="/elonlar/:id" element={<ElonlarSingle />} />
+        <Route path="/loyihalar/:id" element={<LoyihalarSingle />} />
+        <Route path="/kengash/:id" element={<IlmiyKengashSingle />} />
       </Route>
     </Routes>
   </BrowserRouter>
