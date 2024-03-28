@@ -5,14 +5,21 @@ import { Pagination } from "antd";
 export default function Yangiliklar() {
   const [current, setCurrent] = useState(3);
   const onChange = (page) => {
-    // console.log(page);
     setCurrent(page);
   };
   return (
     <div className="md:max-w-[1440px] mx-auto max-w-[300px] flex flex-col items-center container">
-      <h1 className="lg:text-[60px] md:text-[50px] text-[30px] font-semibold text-[#000300]  lg:top-[90px] lg:left-[130px] md:top-[70px] md:left-[120px] top-[100px] left-[40px]">
-        E'lonlar
-      </h1>
+      <div className="flex flex-col md:gap-4 gap-1 py-10">
+        <div class="flex items-center justify-center">
+          <div class="flex-grow border-t border-black"></div>
+          <p class="text-center px-4 lg:text-[32px] text-[20px]">E'LONLAR</p>
+          <div class="flex-grow border-t border-black"></div>
+        </div>
+        <span className="text-center md:text-lg text-black/50 block">
+          ATROF-MUHIT VA TABIATNI MUHOFAZA QILISH TEXNOLOGIYALARI ILMIY-TADQIQOT
+          INSTITUTIDA OLIB BORILAYOTGAN E'LONLARI
+        </span>
+      </div>
       <div className="flex flex-col md:flex-row flex-wrap gap-4">
         <div className="w-[300px] h-[390px]  rounded-lg shadow-xl hover:shadow-2xl cursor-pointer">
           <img
@@ -135,12 +142,6 @@ export default function Yangiliklar() {
           </div>
         </div>
       </div>
-      <Pagination
-        current={current}
-        onChange={onChange}
-        total={50}
-        className="py-5"
-      />
     </div>
   );
 }

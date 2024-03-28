@@ -1,10 +1,11 @@
 import React from "react";
 import { Collapse } from "antd";
 import "./lab.css";
+
 export default function Labaratoriye() {
   return (
-    <div className="md:mx-[20%] my-14 grid grid-cols-1 gap-5">
-      <h1 className="md:text-[45px] font-normal text-base text-center">
+    <div className="md:mx-[20%] my-10 grid grid-cols-1 gap-5">
+      <h1 className="text-[30px] font-semibold text-center">
         Laboratoriya va bo'limlar haqida ma'lumot
       </h1>
       <Collapse

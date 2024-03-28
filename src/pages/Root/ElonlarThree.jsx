@@ -1,7 +1,7 @@
 import axios from "axios";
 import { IoTimeOutline } from "react-icons/io5";
 import React, { useEffect, useState } from "react";
-import { Link, useNavigate } from "react-router-dom";
+import { useNavigate } from "react-router-dom";
 
 export const formatDate = (dateString) => {
   const date = new Date(dateString);
@@ -12,16 +12,18 @@ export const formatDate = (dateString) => {
     month < 10 ? "0" : ""
   }${month}.${year}`;
 };
-const News = () => {
+const ElonlarThree = () => {
   const [data, setData] = useState([]);
 
   const navigate = useNavigate();
+
   useEffect(() => {
     const fetchData = async () => {
       try {
         const response = await axios.get(
-          "http://45.55.64.16:8001/api/news/latest/three"
+          "http://45.55.64.16:8001/api/elonlar/latest/three"
         );
+        console.log(response.data);
         setData(response.data);
       } catch (error) {
         console.error("Error fetching data:", error);
@@ -45,13 +47,7 @@ const News = () => {
           />
           <h3 className="text-lg font-semibold line-clamp-2">{el.title}</h3>
           <p className="text-[14px] line-clamp-3">{el.content}</p>
-          <div className="flex items-center justify-between">
-            <div className="flex gap-1 items-center">
-              <IoTimeOutline className="text-gray-500" size={20} />
-              <p className="text-gray-500 font-semibold">
-                {formatDate(el.created_at)}
-              </p>
-            </div>
+          <div className="flex items-center ">
             <button
               type="button"
               className=" text-white bg-green-500 hover:bg-green-600 font-medium rounded-lg text-sm px-4 py-2"
@@ -66,4 +62,4 @@ const News = () => {
   );
 };
 
-export default News;
+export default ElonlarThree;

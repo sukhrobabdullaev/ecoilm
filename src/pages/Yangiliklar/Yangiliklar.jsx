@@ -8,7 +8,7 @@ export default function New() {
   useEffect(() => {
     axios({
       method: "GET",
-      url: "https://ecoilm.uz/api",
+      url: "http://45.55.64.16:8001/api",
     })
       .then((res) => {
         setPeople(res?.data);

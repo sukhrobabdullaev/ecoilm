@@ -12,7 +12,8 @@ export const formatDate = (dateString) => {
     month < 10 ? "0" : ""
   }${month}.${year}`;
 };
-const News = () => {
+
+const LoyihalarThree = () => {
   const [data, setData] = useState([]);
 
   const navigate = useNavigate();
@@ -20,7 +21,7 @@ const News = () => {
     const fetchData = async () => {
       try {
         const response = await axios.get(
-          "http://45.55.64.16:8001/api/news/latest/three"
+          "http://45.55.64.16:8001/api/loyihalar/latest/three"
         );
         setData(response.data);
       } catch (error) {
@@ -32,38 +33,35 @@ const News = () => {
   }, []);
 
   return (
-    <div className="flex justify-center md:flex-row flex-wrap flex-col gap-4 items-center">
+    <div className="flex md:flex-row flex-wrap flex-col gap-6 mt-10 items-center md:justify-between">
       {data.map((el) => (
         <div
-          className="md:w-[400px] h-auto rounded-xl bg-white shadow-2xl hover:shadow-xl cursor-pointer p-4 flex flex-col gap-2"
+          className="shadow-xl w-[350px] rounded-tr-[20px] rounded-bl-[20px] flex flex-col items-center justify-around hover:scale-105 duration-300"
           key={el.id}
         >
           <img
-            className="md:w-[400px] md:h-[250px] rounded-tr-xl rounded-tl-xl object-cover"
+            className="w-full h-[300px] object-cover rounded-tr-[20px]"
             src={el.image}
-            alt={el.title}
+            alt="loyiha"
           />
-          <h3 className="text-lg font-semibold line-clamp-2">{el.title}</h3>
-          <p className="text-[14px] line-clamp-3">{el.content}</p>
-          <div className="flex items-center justify-between">
-            <div className="flex gap-1 items-center">
-              <IoTimeOutline className="text-gray-500" size={20} />
-              <p className="text-gray-500 font-semibold">
-                {formatDate(el.created_at)}
-              </p>
-            </div>
+          <div className="flex flex-col gap-4 p-4">
+            <p className="md:text-[20px] font-semibold line-clamp-2">
+              {el.title}
+            </p>
+            <p className="text-sm line-clamp-3">{el.content}</p>
             <button
               type="button"
               className=" text-white bg-green-500 hover:bg-green-600 font-medium rounded-lg text-sm px-4 py-2"
-              onClick={() => navigate(`/news/${el.id}`)}
+              // onClick={() => navigate(`/news/${el.id}`)}
             >
               Batafsil
             </button>
           </div>
+          <div />
         </div>
       ))}
     </div>
   );
 };
 
-export default News;
+export default LoyihalarThree;

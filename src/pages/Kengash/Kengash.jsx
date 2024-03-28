@@ -58,12 +58,6 @@ export default function Kengash() {
           </div>
         </div>
       </div>
-      <Pagination
-        current={current}
-        onChange={onChange}
-        total={50}
-        className="py-5 text-center"
-      />
     </div>
   );
 }
