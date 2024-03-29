@@ -102,11 +102,11 @@ const Navbarr = () => {
               className="flex items-center space-x-3 rtl:space-x-reverse"
             >
               <img
-                className="md:w-20 md:h-20 h-16 w-16"
+                className="md:w-16 md:h-16 h-12 w-12"
                 src="/assets/img/Ekologiya_ITI_logo.svg"
                 alt="img"
               />
-              <p className="lg:text-[12px] ms-3 sm:text-[10px] text-white md:w-[315px] font-normal hidden md:flex flex-col ">
+              <p className="ms-3 sm:text-[10px] text-white md:w-[315px] font-normal hidden md:flex flex-col ">
                 <span>ATROF-MUHIT VA TABIATNI</span>
                 <span>MUHOFAZA QILISH TEXNOLOGIYALARI</span>
                 <span>ILMIY-TADQIQOT INSTITUTI</span>
@@ -161,7 +161,7 @@ const Navbarr = () => {
             )}
 
             <div
-              className={`w-full z-50 absolute top-[100px] left-0 lg:static lg:flex lg:flex-row lg:gap-10 md:justify-end ${
+              className={`w-full z-50 absolute top-[84px] left-0 lg:static lg:flex lg:flex-row lg:gap-10 md:justify-end ${
                 isMenu ? "" : "hidden"
               }`}
             >
@@ -175,7 +175,7 @@ const Navbarr = () => {
                     className="cursor-pointer"
                   >
                     <a
-                      className="block py-2 px-3 text-white rounded md:bg-transparent  md:p-0 dark:text-white"
+                      className="block py-2 px-3 text-white rounded md:bg-transparent  md:p-0 "
                       aria-current="page"
                       onClick={(e) => e.preventDefault()}
                     >
@@ -192,7 +192,7 @@ const Navbarr = () => {
                     className="cursor-pointer"
                   >
                     <a
-                      className="block py-2 px-3 text-white rounded md:bg-transparent  md:p-0 dark:text-white"
+                      className="block py-2 px-3 text-white rounded md:bg-transparent  md:p-0"
                       aria-current="page"
                       onClick={(e) => e.preventDefault()}
                     >
@@ -209,7 +209,7 @@ const Navbarr = () => {
                     className="cursor-pointer"
                   >
                     <a
-                      className="block py-2 px-3 text-white rounded md:bg-transparent  md:p-0 dark:text-white"
+                      className="block py-2 px-3 text-white rounded md:bg-transparent  md:p-0"
                       aria-current="page"
                       onClick={(e) => e.preventDefault()}
                     >
@@ -220,7 +220,7 @@ const Navbarr = () => {
                 <li>
                   <Link
                     to={"/kengash"}
-                    className="block py-2 px-3 text-gray-900 rounded hover:bg-gray-100 md:hover:bg-transparent md:border-0  md:p-0 dark:text-white "
+                    className="block py-2 px-3 rounded hover:bg-gray-100 md:hover:bg-transparent md:border-0 md:p-0 text-white"
                     onClick={closeMenu}
                   >
                     Ilmiy kengash
@@ -229,7 +229,7 @@ const Navbarr = () => {
                 <li>
                   <a
                     href="#"
-                    className="block py-2 px-3 text-gray-900 rounded hover:bg-gray-100 md:hover:bg-transparent md:border-0  md:p-0 dark:text-white "
+                    className="block py-2 px-3 rounded hover:bg-gray-100 md:hover:bg-transparent md:border-0  md:p-0 text-white "
                     onClick={closeMenu}
                   >
                     Ilmiy texnik kengash
