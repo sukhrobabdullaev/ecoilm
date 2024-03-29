@@ -165,7 +165,7 @@ const Navbarr = () => {
                 isMenu ? "" : "hidden"
               }`}
             >
-              <ul className="font-medium flex flex-col items-center p-4 lg:p-0 md:mt-4  lg:flex-row lg:space-x-8 rtl:space-x-reverse lg:mt-0 lg:border-0 lg:bg-white bg-gray-800 border-gray-700">
+              <ul className="font-medium flex flex-col items-center p-4 lg:p-0 md:mt-4  lg:flex-row lg:space-x-8 rtl:space-x-reverse lg:mt-0 lg:border-0 bg-gray-900 border-gray-700">
                 <li className="">
                   <Dropdown
                     overlay={dropdownMenu}
@@ -236,7 +236,7 @@ const Navbarr = () => {
                   </a>
                 </li>
               </ul>
-              <div className=" bg-gray-800 flex items-start justify-center lg:bg-gray-900 border-gray-700 lg:pb-0 pb-4">
+              <div className=" bg-gray-900 flex items-start justify-center  border-gray-700 lg:pb-0 pb-4">
                 <Select
                   defaultValue="Uz"
                   style={{
