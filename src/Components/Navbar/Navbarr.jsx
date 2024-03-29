@@ -165,7 +165,7 @@ const Navbarr = () => {
                 isMenu ? "" : "hidden"
               }`}
             >
-              <ul className="font-medium flex flex-col items-center p-4 lg:p-0 md:mt-4  bg-gray-50 lg:flex-row lg:space-x-8 rtl:space-x-reverse lg:mt-0 lg:border-0 lg:bg-white dark:bg-gray-800 lg:dark:bg-gray-900 dark:border-gray-700">
+              <ul className="font-medium flex flex-col items-center p-4 lg:p-0 md:mt-4  lg:flex-row lg:space-x-8 rtl:space-x-reverse lg:mt-0 lg:border-0 lg:bg-white bg-gray-800 border-gray-700">
                 <li className="">
                   <Dropdown
                     overlay={dropdownMenu}
