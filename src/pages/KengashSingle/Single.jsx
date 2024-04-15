@@ -13,7 +13,7 @@ export default function IlmiyKengashSingle() {
   useEffect(() => {
     axios({
       method: "GET",
-      url: `https://ecoilm.uz/api/ilmkengashi/detail/${param}`,
+      url: `http://45.55.64.16:8001/api/ilmkengashi/detail/${param}`,
     })
       .then((res) => {
         setSingle(res?.data);

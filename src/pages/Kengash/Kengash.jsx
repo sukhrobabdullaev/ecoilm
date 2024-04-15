@@ -12,7 +12,7 @@ export default function Kengash() {
     const fetchData = async () => {
       try {
         const response = await axios.get(
-          "https://ecoilm.uz/api/ilmkengashi"
+          "http://45.55.64.16:8001/api/ilmkengashi"
         );
         setData(response.data);
       } catch (error) {

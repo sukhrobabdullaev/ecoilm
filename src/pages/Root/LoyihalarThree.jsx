@@ -22,7 +22,7 @@ const LoyihalarThree = () => {
     const fetchData = async () => {
       try {
         const response = await axios.get(
-          "https://ecoilm.uz/api/loyihalar/latest/three"
+          "http://45.55.64.16:8001/api/loyihalar/latest/three"
         );
         setData(response.data);
       } catch (error) {

@@ -23,6 +23,21 @@ const Navbarr = () => {
     setIsMenu(false);
   };
 
+  const labaratoriyaMenu = (
+    <Menu className="right-dropdown">
+      <Menu.Item key="7">
+        <Link to="/laboratoriya-mudrlari" onClick={closeMenu}>
+          Laboratoriya mudrlari
+        </Link>
+      </Menu.Item>
+      <Menu.Item key="8">
+        <Link to="/bolim-boshliqlari" onClick={closeMenu}>
+          Bo'lim boshliqlari
+        </Link>
+      </Menu.Item>
+    </Menu>
+  );
+
   const dropdownMenu = (
     <Menu className="">
       <Menu.Item key="1">
@@ -41,11 +56,18 @@ const Navbarr = () => {
         </Link>
       </Menu.Item>
       <Menu.Item key="4">
+        <Dropdown overlay={labaratoriyaMenu}>
+          <a className="ant-dropdown-link" onClick={(e) => e.preventDefault()}>
+            Institut tarkibi
+          </a>
+        </Dropdown>
+      </Menu.Item>
+      <Menu.Item key="5">
         <Link to="/boglanish" onClick={closeMenu}>
           Bog'lanish
         </Link>
       </Menu.Item>
-      <Menu.Item key="5">
+      <Menu.Item key="6">
         <Link to="/loyhalar" onClick={closeMenu}>
           Loyihalar
         </Link>

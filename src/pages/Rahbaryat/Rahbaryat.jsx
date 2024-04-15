@@ -2,72 +2,108 @@ import React from "react";
 
 export default function Rahbaryat() {
   return (
-    <div className="container">
-      <p className="text-center text-blue-950 mb-3 mt-8  text-4xl font-semibold">
-        Rahbariyat
-      </p>
-      <p className="text-center text-base md:text-lg text-black/60">
-        Atrof muhit va tabiatni muhofaza qilish texnologiyalari ilmiy-tadqiqot
-        instituti rahbaryati
-      </p>
-      <div className="flex items-center gap-10 md:flex-row flex-col  mt-6">
-        <div className="shadow-xl md:w-[500px] w-[300px] mx-auto  mb-4 rounded-lg bg-white">
-          <img
-            className="w-full mx-auto mt-4"
-            src="/assets/img/JOA 1.a59adf375d88a1c7b576.png"
-            alt=""
-          />
-          <p className="mt-3  lg:text-[20px] md:text-[17px] sm:text-[17px] text-[15px] font-semibold px-1 text-center lg:font-semibold">
-            PULATOV BAXTIYOR ALIMOVICH
-          </p>
-          <p className="text-center lg:text-[15px] md:text-[13px] sm:text-[14px] font-[400] mt-4 px-4 ">
-            Atrof-muhit va tabiatni muhofaza qilish taxnologiyalari ilmiy
-            tadqiqot instituti direktori
-          </p>
-          <p className="text-center lg:text-[15px] md:text-[13px] sm:text-[14px] mt-2">
-            +998 71 277 69 83
-          </p>
-          <p className="text-center md:text-[13px] mt-3 mb-4">
-            Juma kuni,10:00 - 12:00
-          </p>
-        </div>
-        <div className="shadow-xl md:w-[500px] w-[300px] mx-auto mb-4 rounded-lg bg-white">
-          <img
-            className="w-full mx-auto mt-4"
-            src="/assets/img/JOA 3.8b62ece3d3f958f7047d.png"
-            alt=""
-          />
-          <p className="mt-3  lg:text-[20px] md:text-[17px] sm:text-[17px] text-[15px] text-center px-1 font-semibold">
-            BURIYEV SALIMJAN SAMEDJANOVICH
-          </p>
-          <p className="text-center lg:text-[15px] md:text-[13px] sm:text-[14px] font-[500] mt-4 px-4">
-            Direktorning ilmiy ishlari va innovatsiyalari bo'yicha o'rinbosari
-          </p>
-          <p className="text-center lg:text-[15px] md:text-[13px] sm:text-[14px] mt-2">
-            +998 71 277 69 83
-          </p>
-          <p className="text-center md:text-[13px] sm:mt-[30px] md:mt-8 lg:mt-3  mb-4 ">
-            Juma kuni,10:00 - 12:00
-          </p>
-        </div>
-        <div className="shadow-xl md:w-[500px] w-[300px] mx-auto mb-4 rounded-lg bg-white">
-          <img
-            className="w-full mx-auto mt-4"
-            src="/assets/img/JOA 2.1f1b2226ee7ed4326930.png"
-            alt=""
-          />
-          <p className="mt-3  lg:text-[20px] md:text-[17px] sm:text-[17px] text-[15px] text-center px-1 font-semibold">
-            AMINOV XAMZA XUSANOVICH
-          </p>
-          <p className="text-center lg:text-[15px] md:text-[13px] sm:text-[14px] font-[500] mt-4 px-4">
-            Direktor o'rin bosari
-          </p>
-          <p className="text-center lg:text-[15px] md:text-[13px] sm:text-[14px] mt-2">
-            +998 71 277 69 83
-          </p>
-          <p className="text-center md:text-[13px] md:mt-[50px] lg:mt-8 mb-4 ">
-            Juma kuni,10:00 - 12:00
-          </p>
+    <div className="bg-[#eee]">
+      <div className="container">
+        <p className="text-center text-blue-950 mb-3 mt-8  text-4xl font-semibold">
+          Rahbariyat
+        </p>
+        <p className="text-center text-base md:text-[20px] text-black/60">
+          Atrof muhit va tabiatni muhofaza qilish texnologiyalari ilmiy-tadqiqot
+          instituti rahbaryati
+        </p>
+        <div className="flex items-center flex-col gap-2 mt-6 ">
+          <div className="flex gap-10 rounded-tl-lg rounded-br-lg bg-white justify-center pb-10 shadow-lg mb-4">
+            <img
+              src="assets/img/rahbariyat.png"
+              alt="rahbariyat"
+              className=" h-[400px] bg-cover rounded-tl-lg rounded-br-lg"
+            />
+            <div className="flex flex-col gap-10 justify-end text-[18px] pr-6">
+              <div className="flex flex-col gap-2">
+                <h3 className="font-bold">Pulatov Baxtiyor Alimovich</h3>
+                <p>
+                  Atrof muhit va tabiatni muhofaza qilish texnologiyalari
+                  ilmiy-tadqiqot instituti direktori
+                </p>
+              </div>
+
+              <div className="flex flex-col gap-2">
+                <div className="flex items-center gap-1">
+                  <span className="font-bold">Qabul kuni:</span>
+                  <span>Dushanba</span>
+                </div>
+                <div className="flex items-center gap-1">
+                  <span className="font-bold">Qabul vaqti:</span>
+                  <span>10:00-12:00</span>
+                </div>
+                <p>
+                  <strong>
+                    Qabul quyidagi manzil bo‘yicha amalga oshiriladi
+                  </strong>
+                  :&nbsp; Toshkent shahri, Chilonzor tumani, Bunyodkor shoh
+                  ko‘chasi, 7-A uy
+                </p>
+                <div className="flex items-center gap-1">
+                  <span className="font-bold">Telefon: </span>
+                  <span>(998-71)123-45-67 (ichki: 1001#)</span>
+                </div>
+                <div className="flex items-center gap-1">
+                  <span className="font-bold">Elektron pochta: </span>
+                  <span>info@ecoilm.uz</span>
+                </div>
+              </div>
+
+              <a href="#" className="text-blue-500">
+                Qisqa biografiya...
+              </a>
+            </div>
+          </div>
+          <div className="flex gap-10 rounded-tl-lg rounded-br-lg bg-white justify-center pb-10 shadow-lg mb-4">
+            <img
+              src="assets/img/rahbariyat.png"
+              alt="rahbariyat"
+              className="w- x] h-[400px] bg-cover rounded-tl-lg rounded-br-lg"
+            />
+            <div className="flex flex-col gap-10 justify-end text-[18px] pr-6">
+              <div className="flex flex-col gap-2">
+                <h3 className="font-bold">Pulatov Baxtiyor Alimovich</h3>
+                <p>
+                  Atrof muhit va tabiatni muhofaza qilish texnologiyalari
+                  ilmiy-tadqiqot instituti direktori
+                </p>
+              </div>
+
+              <div className="flex flex-col gap-2">
+                <div className="flex items-center gap-1">
+                  <span className="font-bold">Qabul kuni:</span>
+                  <span>Dushanba</span>
+                </div>
+                <div className="flex items-center gap-1">
+                  <span className="font-bold">Qabul vaqti:</span>
+                  <span>10:00-12:00</span>
+                </div>
+                <p>
+                  <strong>
+                    Qabul quyidagi manzil bo‘yicha amalga oshiriladi
+                  </strong>
+                  :&nbsp; Toshkent shahri, Chilonzor tumani, Bunyodkor shoh
+                  ko‘chasi, 7-A uy
+                </p>
+                <div className="flex items-center gap-1">
+                  <span className="font-bold">Telefon: </span>
+                  <span>(998-71)123-45-67 (ichki: 1001#)</span>
+                </div>
+                <div className="flex items-center gap-1">
+                  <span className="font-bold">Elektron pochta: </span>
+                  <span>info@ecoilm.uz</span>
+                </div>
+              </div>
+
+              <a href="#" className="text-blue-500">
+                Qisqa biografiya...
+              </a>
+            </div>
+          </div>
         </div>
       </div>
     </div>

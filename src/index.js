@@ -24,13 +24,13 @@ import Kengash from "./pages/Kengash/Kengash";
 
 import "animate.css";
 
-import LatestNews from "./pages/Root/LatestNews";
 import NewsSingle from "./pages/NewsSingle/Single";
 import ElonlarSingle from "./pages/ElonlarSingle/Single";
 import LoyihalarSingle from "./pages/LoyihalarSingle/Single";
 import IlmiyKengashSingle from "./pages/KengashSingle/Single";
 import Yangiliklar from "./pages/Yangiliklar/Yangiliklar";
-
+import LabaratoriyaMudrlari from "./pages/InstitutTarkibi/LabaratoriyaMudrlari";
+import BolimBoshliqlari from "./pages/InstitutTarkibi/BolimBoshliqlari";
 const root = ReactDOM.createRoot(document.getElementById("root"));
 root.render(
   <BrowserRouter>
@@ -53,6 +53,11 @@ root.render(
         <Route path="/elonlar/:id" element={<ElonlarSingle />} />
         <Route path="/loyihalar/:id" element={<LoyihalarSingle />} />
         <Route path="/kengash/:id" element={<IlmiyKengashSingle />} />
+        <Route
+          path="/laboratoriya-mudrlari"
+          element={<LabaratoriyaMudrlari />}
+        />
+        <Route path="/bolim-boshliqlari" element={<BolimBoshliqlari />} />
       </Route>
     </Routes>
   </BrowserRouter>
