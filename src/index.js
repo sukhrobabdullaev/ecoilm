@@ -31,6 +31,7 @@ import IlmiyKengashSingle from "./pages/KengashSingle/Single";
 import Yangiliklar from "./pages/Yangiliklar/Yangiliklar";
 import LabaratoriyaMudrlari from "./pages/InstitutTarkibi/LabaratoriyaMudrlari";
 import BolimBoshliqlari from "./pages/InstitutTarkibi/BolimBoshliqlari";
+import InstitutTarixi from "./pages/InstitutTarixi/InstitutTarixi";
 const root = ReactDOM.createRoot(document.getElementById("root"));
 root.render(
   <BrowserRouter>
@@ -58,6 +59,7 @@ root.render(
           element={<LabaratoriyaMudrlari />}
         />
         <Route path="/bolim-boshliqlari" element={<BolimBoshliqlari />} />
+        <Route path="/institut-tarixi" element={<InstitutTarixi />} />
       </Route>
     </Routes>
   </BrowserRouter>

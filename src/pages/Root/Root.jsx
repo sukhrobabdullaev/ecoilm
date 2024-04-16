@@ -1,18 +1,12 @@
-import React, { useEffect, useState } from "react";
-import { Link } from "react-router-dom";
-
-import "./root.css";
 import News from "./News";
-import Jurnallar from "../Jurnallar/Jurnallar";
 import Carousel from "react-multi-carousel";
 import "react-multi-carousel/lib/styles.css";
 import ElonlarThree from "./ElonlarThree";
 import JurnallarThree from "./JurnallarThree";
 import LoyihalarThree from "./LoyihalarThree";
+import CarouselBanner from "./CarouselBanner";
 
-// import PrimeCarousell from "../SwiperHome/PrimeCarousell";
-// import axios from "axios";
-
+import "./root.css";
 const matn = `Toshkent suv ta’minoti, kanalizatsiya, gidrotexnika inshootlari
 va muhandislik gidrogeologiyasi (ToshNII "VODGEO") instituti,
 1960 yilda Markaziy Osiyo arxitektura va qurilish ilmiy-tadqiqot
@@ -38,14 +32,7 @@ instituti ish faoliyatini boshladi.`;
 export default function Root() {
   return (
     <div>
-      <div className="">
-        <img
-          className="object-cover w-full h-[87vh]"
-          src="/assets/img/glavniy.JPG"
-          alt=""
-        />
-      </div>
-
+      <CarouselBanner />
       <section className="yangiliklar my-8">
         <div className="container">
           <div className="flex flex-col md:gap-4 gap-1 py-2">

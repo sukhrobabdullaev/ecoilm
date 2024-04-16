@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import { Link } from "react-router-dom";
 import { Select, Menu, Dropdown } from "antd";
+import translateText from "../../GoogleTranslate";
 
 import "./navbar.css";
 
@@ -10,9 +11,22 @@ const Navbarr = () => {
   const [dropdownVisibleJurnallar, handleDropdownVisibleJurnallar] =
     useState(false);
   const [isMenu, setIsMenu] = useState(false);
+  const [inputText, setInputText] = useState("");
+  const [targetLanguage, setTargetLanguage] = useState("uz"); // Default: Uzbek
 
-  const handleChange = (value) => {
-    console.log(`selected ${value}`);
+  const handleChange = async (value) => {
+    setTargetLanguage(value);
+    await handleTranslate(); // Translate text whenever language changes
+  };
+
+  const handleTranslate = async () => {
+    // Implement translation logic here
+    // For example, translate the text in inputText to the target language
+    if (inputText) {
+      const translatedText = await translateText(inputText, targetLanguage);
+      console.log("Translated Text:", translatedText);
+      // You can set the translated text to state or use it as needed in your application
+    }
   };
 
   const handleDropdownVisibleChange = (flag) => {
@@ -52,7 +66,7 @@ const Navbarr = () => {
       </Menu.Item>
       <Menu.Item key="3">
         <Link to="/raxbaryat" onClick={closeMenu}>
-          Rahbaryat
+          Rahbariyat
         </Link>
       </Menu.Item>
       <Menu.Item key="4">
@@ -63,11 +77,16 @@ const Navbarr = () => {
         </Dropdown>
       </Menu.Item>
       <Menu.Item key="5">
+        <Link to="/institut-tarixi" onClick={closeMenu}>
+          Institut tarixi
+        </Link>
+      </Menu.Item>
+      <Menu.Item key="6">
         <Link to="/boglanish" onClick={closeMenu}>
           Bog'lanish
         </Link>
       </Menu.Item>
-      <Menu.Item key="6">
+      <Menu.Item key="7">
         <Link to="/loyhalar" onClick={closeMenu}>
           Loyihalar
         </Link>
@@ -260,11 +279,9 @@ const Navbarr = () => {
               </ul>
               <div className=" bg-gray-900 flex items-start justify-center  border-gray-700 lg:pb-0 pb-4">
                 <Select
-                  defaultValue="Uz"
-                  style={{
-                    width: 60,
-                  }}
-                  onChange={handleChange}
+                  defaultValue="uz"
+                  style={{ width: 60 }}
+                  onChange={handleChange} // This line was changed
                   options={[
                     {
                       value: "uz",

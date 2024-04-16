@@ -2,20 +2,18 @@ import React from "react";
 import { Link } from "react-router-dom";
 import "./Footer.css";
 import {
-  FaDribbbleSquare,
   FaFacebookSquare,
   FaInstagramSquare,
-  FaTwitterSquare,
-  FaGithubSquare,
   FaCopyright,
   FaTelegram,
+  FaYoutubeSquare,
 } from "react-icons/fa";
 import { YMaps, Map } from "@pbe/react-yandex-maps";
 
 export default function Footer() {
   return (
-    <div className="py-16 px-10 flex gap-32 items-center bg2 border-t border-t-[#00df9a]">
-      <ul>
+    <div className="py-10  px-10 flex md:gap-32 md:flex-row flex-col-reverse gap-10 items-center bg2 border-t border-t-[#00df9a]">
+      <ul className="text-center">
         <li className="flex flex-col items-center">
           <Link
             to={"/"}
@@ -57,17 +55,25 @@ export default function Footer() {
                 />
               </Link>
             </li>
+            <li className="text-[#fefefe] ms-1 pt-5  flex items-center">
+              <Link className="text-[20px]">
+                <FaYoutubeSquare
+                  className="text-white hover:scale-105 duration-300 neon_btn pr-1"
+                  size={25}
+                />
+              </Link>
+            </li>
           </ul>
         </li>
-        <li className="text-[#807c7c] gap-2 pt-5 flex">
-          <FaCopyright className="mt-1" />
-          <p className="flex pl-[2px] items-center justify-between tracking-tight tex-center">
+        <li className="text-[#807c7c] pt-5">
+          <p className="tracking-tight  flex gap-1 md:gap-2">
+            <FaCopyright className="mt-1" />
             2024 ecoilm.uz Barcha huquqlar himoyalangan
           </p>
         </li>
       </ul>
 
-      <div className="right flex flex-col gap-2 text-base text-white opacity-85">
+      <div className="right flex flex-col gap-2 md:text-base text-[14px] text-white opacity-85">
         <div className="flex gap-2">
           <div className="key">Ishonch telefonlari:</div>
           <div className="value">
@@ -112,7 +118,11 @@ export default function Footer() {
       </div>
       <YMaps>
         <div>
-          <Map defaultState={{ center: [41.295006, 69.227675], zoom: 17 }} />
+          <Map
+            defaultState={{ center: [41.295006, 69.227675], zoom: 16 }}
+            width={250}
+            height={200}
+          />
         </div>
       </YMaps>
     </div>
