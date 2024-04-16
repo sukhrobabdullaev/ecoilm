@@ -1,9 +1,9 @@
 import React, { useState } from "react";
 import { Link } from "react-router-dom";
 import { Select, Menu, Dropdown } from "antd";
-import translateText from "../../GoogleTranslate";
 
 import "./navbar.css";
+import GoogleTranslate from "../../GoogleTranslate";
 
 const Navbarr = () => {
   const [dropdownVisible, setDropdownVisible] = useState(false);
@@ -11,22 +11,9 @@ const Navbarr = () => {
   const [dropdownVisibleJurnallar, handleDropdownVisibleJurnallar] =
     useState(false);
   const [isMenu, setIsMenu] = useState(false);
-  const [inputText, setInputText] = useState("");
-  const [targetLanguage, setTargetLanguage] = useState("uz"); // Default: Uzbek
 
-  const handleChange = async (value) => {
-    setTargetLanguage(value);
-    await handleTranslate(); // Translate text whenever language changes
-  };
-
-  const handleTranslate = async () => {
-    // Implement translation logic here
-    // For example, translate the text in inputText to the target language
-    if (inputText) {
-      const translatedText = await translateText(inputText, targetLanguage);
-      console.log("Translated Text:", translatedText);
-      // You can set the translated text to state or use it as needed in your application
-    }
+  const handleChange = (value) => {
+    console.log(value);
   };
 
   const handleDropdownVisibleChange = (flag) => {
@@ -293,6 +280,7 @@ const Navbarr = () => {
                     },
                   ]}
                 />
+                <GoogleTranslate />
               </div>
             </div>
           </div>

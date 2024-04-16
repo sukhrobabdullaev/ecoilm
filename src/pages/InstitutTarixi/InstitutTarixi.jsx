@@ -1,6 +1,22 @@
-import React from "react";
+import axios from "axios";
+import React, { useEffect, useState } from "react";
 
 const InstitutTarixi = () => {
+  const [single, setSingle] = useState(null);
+
+  useEffect(() => {
+    axios({
+      method: "GET",
+      url: `http://45.55.64.16:8001/api/tarix`,
+    })
+      .then((res) => {
+        setSingle(res?.data);
+      })
+      .catch((err) => {
+        console.log(err);
+      });
+  }, []);
+
   return (
     <div className="flex py-8 justify-center flex-wrap flex-col gap-4 items-center">
       <div className="container">
@@ -17,31 +33,12 @@ const InstitutTarixi = () => {
             ILMIY-TADQIQOT INSTITUT TARIXI
           </span>
         </div>
-        <p className="mt-5">
-          Lorem ipsum dolor sit amet, consectetur adipisicing elit. Sequi
-          commodi iste corrupti tenetur amet, ut distinctio fugit. Molestiae
-          voluptas doloribus quasi, error laboriosam necessitatibus commodi
-          aliquam. Dicta nobis alias, quibusdam tenetur amet id cum eos minus
-          quasi, doloremque officia quaerat facere deleniti facilis itaque
-          asperiores provident. Necessitatibus aliquam dicta at, molestiae amet
-          beatae expedita. Non ducimus nemo aut saepe rem obcaecati quam
-          quibusdam natus beatae, expedita, reiciendis labore rerum itaque
-          consequatur! Est laboriosam odit provident. Odit eveniet itaque amet
-          eligendi iste voluptate saepe sit deleniti neque repellat, quaerat
-          labore accusamus, hic tenetur cum perferendis aspernatur et
-          voluptatibus nemo repellendus? Reiciendis, veritatis aliquam rerum
-          voluptates voluptatibus est nam architecto atque asperiores placeat
-          ipsum quod tempora omnis. Suscipit sequi eaque illo maiores natus
-          quidem, recusandae, iure quo dolore voluptatibus vel saepe minus,
-          laudantium optio facilis fugit eos cupiditate mollitia in neque?
-          Doloremque ex possimus aut similique iusto natus voluptatem adipisci
-          ratione quibusdam dolore, quam fugiat consequuntur maxime quod. Neque
-          eius porro eligendi illo quia quos suscipit id! Adipisci quas,
-          inventore, minima atque tempore est dolor minus porro debitis
-          doloremque tenetur cupiditate libero a, sit similique delectus
-          voluptatibus. Deserunt nihil quaerat fugit sequi quidem dolor. Rerum
-          placeat modi atque consequatur nisi, architecto dolor!
-        </p>
+        {single && (
+          <div
+            className="mt-5"
+            dangerouslySetInnerHTML={{ __html: single[0].tarix }}
+          />
+        )}
       </div>
     </div>
   );
