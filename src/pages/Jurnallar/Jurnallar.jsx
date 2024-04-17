@@ -1,13 +1,18 @@
 import axios from "axios";
 import { useEffect, useState } from "react";
+import { useTranslation } from "react-i18next";
+import { lang } from "../../Components/Navbar/Navbarr";
 
 export default function Jurnallar() {
+  const { t } = useTranslation();
   const [data, setData] = useState([]);
 
   useEffect(() => {
     const fetchData = async () => {
       try {
-        const response = await axios.get("http://45.55.64.16:8001/api/journals");
+        const response = await axios.get(
+          "http://45.55.194.72:8000/api/journals"
+        );
         setData(response.data);
       } catch (error) {
         console.error("Error fetching data:", error);
@@ -23,11 +28,13 @@ export default function Jurnallar() {
         <div className="flex flex-col md:gap-4 gap-1 pt-10">
           <div class="flex items-center justify-center">
             <div class="flex-grow border-t border-black"></div>
-            <p class="text-center px-4 lg:text-[32px] text-[20px]">JURNALLAR</p>
+            <p class="text-center px-4 lg:text-[32px] text-[20px]">
+              {t("journalsH")}
+            </p>
             <div class="flex-grow border-t border-black"></div>
           </div>
           <span className="text-center md:text-lg text-black/50 block">
-            EKOLOGIYA XABARNOMASI JURNALINING SO'NGI SONLARI
+            {t("journalsDesc")}
           </span>
         </div>
         <div className="flex flex-wrap gap-4 pb-10 py-4">
@@ -39,10 +46,16 @@ export default function Jurnallar() {
               <img
                 className="md:w-[300px] h-auto object-cover mx-auto rounded-t-md"
                 src={el.image}
-                alt=""
+                alt={
+                  lang == "en"
+                    ? el?.translations?.en?.title
+                    : el?.translations?.uz?.title
+                }
               />
               <p className="md:text-base text-center  m-2 font-semibold">
-                {el.title}
+                {lang == "en"
+                  ? el?.translations?.en?.title
+                  : el?.translations?.uz?.title}
               </p>
               <div className="flex justify-end mb-2 mr-2">
                 <a

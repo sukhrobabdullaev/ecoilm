@@ -1,5 +1,6 @@
 import axios from "axios";
 import React, { useEffect, useState } from "react";
+import { lang } from "../../Components/Navbar/Navbarr";
 
 export const formatDate = (dateString) => {
   const date = new Date(dateString);
@@ -18,7 +19,7 @@ const JurnallarThree = () => {
     const fetchData = async () => {
       try {
         const response = await axios.get(
-          "http://45.55.64.16:8001/api/journals/latest/four"
+          "http://45.55.194.72:8000/api/journals/latest/four"
         );
         setData(response.data);
       } catch (error) {
@@ -40,10 +41,16 @@ const JurnallarThree = () => {
             <img
               className="md:w-[300px] h-auto object-cover mx-auto rounded-t-md"
               src={el.image}
-              alt=""
+              alt={
+                lang == "en"
+                  ? el?.translations?.en?.title
+                  : el?.translations?.uz?.title
+              }
             />
             <p className="md:text-base text-center  m-2 font-semibold">
-              {el.title}
+              {lang == "en"
+                ? el?.translations?.en?.title
+                : el?.translations?.uz?.title}
             </p>
             <div className="flex justify-end mb-2 mr-2">
               <a

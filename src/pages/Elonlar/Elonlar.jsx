@@ -3,6 +3,7 @@ import { IoTimeOutline } from "react-icons/io5";
 import React, { useEffect, useState } from "react";
 import { useNavigate } from "react-router-dom";
 import { useTranslation } from "react-i18next";
+import { lang } from "../../Components/Navbar/Navbarr";
 
 export const formatDate = (dateString) => {
   const date = new Date(dateString);
@@ -23,7 +24,9 @@ export default function Elonlar() {
   useEffect(() => {
     const fetchData = async () => {
       try {
-        const response = await axios.get("http://45.55.64.16:8001/api/elonlar");
+        const response = await axios.get(
+          "http://45.55.194.72:8000/api/elonlar"
+        );
         setData(response.data);
       } catch (error) {
         console.error("Error fetching data:", error);
@@ -56,10 +59,23 @@ export default function Elonlar() {
             <img
               className="md:w-[400px] md:h-[250px] rounded-tr-xl rounded-tl-xl object-cover"
               src={el.image}
-              alt={el.title}
+              alt={
+                lang == "en"
+                  ? el?.translations?.en?.title
+                  : el?.translations?.uz?.title
+              }
             />
-            <h3 className="text-lg font-semibold line-clamp-2">{el.title}</h3>
-            <p className="text-[14px] line-clamp-3">{el.content}</p>
+            <h3 className="text-lg font-semibold line-clamp-2">
+              {lang == "en"
+                ? el?.translations?.en?.title
+                : el?.translations?.uz?.title}
+            </h3>
+            <p className="text-[14px] line-clamp-3">
+              {" "}
+              {lang == "en"
+                ? el?.translations?.en?.content
+                : el?.translations?.uz?.content}
+            </p>
             <div className="flex items-center ">
               <button
                 type="button"

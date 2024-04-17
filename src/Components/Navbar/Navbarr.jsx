@@ -3,9 +3,10 @@ import { Link } from "react-router-dom";
 import { Select, Menu, Dropdown } from "antd";
 
 import "./navbar.css";
-import GoogleTranslate from "../../GoogleTranslate";
-import { useTranslation, Trans } from "react-i18next";
+import { useTranslation } from "react-i18next";
+
 import i18n from "../../i18n";
+export const lang = localStorage.getItem("i18nextLng");
 
 const Navbarr = () => {
   const { t } = useTranslation();
@@ -17,7 +18,8 @@ const Navbarr = () => {
   const [isMenu, setIsMenu] = useState(false);
 
   const handleChangeLanguage = (value) => {
-    i18n.changeLanguage(value); // Change the language in i18next
+    window.location.reload();
+    i18n.changeLanguage(value);
   };
 
   const handleDropdownVisibleChange = (flag) => {
@@ -27,7 +29,6 @@ const Navbarr = () => {
   const closeMenu = () => {
     setIsMenu(false);
   };
-
   const labaratoriyaMenu = (
     <Menu className="right-dropdown">
       <Menu.Item key="7">
@@ -267,7 +268,7 @@ const Navbarr = () => {
               </ul>
               <div className=" bg-gray-900 flex items-start justify-center  border-gray-700 lg:pb-0 pb-4">
                 <Select
-                  defaultValue={i18n.language} // Set default value to the current language
+                  defaultValue={18n.language} // Set default value to the current language
                   style={{ width: 70 }}
                   onChange={handleChangeLanguage} // Call handleChangeLanguage function when language is changed
                   options={[

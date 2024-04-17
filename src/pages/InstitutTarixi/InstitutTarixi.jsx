@@ -1,6 +1,7 @@
 import axios from "axios";
 import React, { useEffect, useState } from "react";
 import { useTranslation } from "react-i18next";
+import { lang } from "../../Components/Navbar/Navbarr";
 
 const InstitutTarixi = () => {
   const { t } = useTranslation();
@@ -9,7 +10,7 @@ const InstitutTarixi = () => {
   useEffect(() => {
     axios({
       method: "GET",
-      url: `http://45.55.64.16:8001/api/tarix`,
+      url: `http://45.55.194.72:8000/api/tarix`,
     })
       .then((res) => {
         setSingle(res?.data);
@@ -18,7 +19,7 @@ const InstitutTarixi = () => {
         console.log(err);
       });
   }, []);
-
+  console.log(single);
   return (
     <div className="flex py-8 justify-center flex-wrap flex-col gap-4 items-center">
       <div className="container">
@@ -37,7 +38,12 @@ const InstitutTarixi = () => {
         {single && (
           <div
             className="mt-5"
-            dangerouslySetInnerHTML={{ __html: single[0].tarix }}
+            dangerouslySetInnerHTML={{
+              __html:
+                lang == "en"
+                  ? single[0]?.translations?.en?.tarix
+                  : single[0]?.translations?.uz?.tarix,
+            }}
           />
         )}
       </div>

@@ -3,8 +3,11 @@ import React, { useEffect, useState } from "react";
 import { useNavigate } from "react-router-dom";
 import { IoTimeOutline } from "react-icons/io5";
 import { formatDate } from "../Root/News";
+import { useTranslation } from "react-i18next";
+import { lang } from "../../Components/Navbar/Navbarr";
 
 export default function Kengash() {
+  const { t } = useTranslation();
   const [data, setData] = useState([]);
   const navigate = useNavigate();
 
@@ -12,7 +15,7 @@ export default function Kengash() {
     const fetchData = async () => {
       try {
         const response = await axios.get(
-          "http://45.55.64.16:8001/api/ilmkengashi"
+          "http://45.55.194.72:8000/api/ilmkengashi"
         );
         setData(response.data);
       } catch (error) {
@@ -29,7 +32,7 @@ export default function Kengash() {
           <div class="flex items-center justify-center">
             <div class="flex-grow border-t border-black"></div>
             <p class="text-center px-4 lg:text-[32px] text-[20px]">
-              ILMIY KENGASH
+              {t("scientificH")}
             </p>
             <div class="flex-grow border-t border-black"></div>
           </div>
@@ -43,9 +46,17 @@ export default function Kengash() {
               <img
                 className="md:w-[500px] mx-auto md:h-[250px] rounded-tr-xl rounded-tl-xl object-cover"
                 src={el.image}
-                alt={el.title}
+                alt={
+                  lang == "en"
+                    ? el?.translations?.en?.title
+                    : el?.translations?.uz?.title
+                }
               />
-              <p className="text-[14px] line-clamp-3">{el.content}</p>
+              <p className="text-[14px] line-clamp-3">
+                {lang == "en"
+                  ? el?.translations?.en?.content
+                  : el?.translations?.uz?.content}
+              </p>
               <div className="flex items-center justify-between">
                 <div className="flex gap-1 items-center">
                   <IoTimeOutline className="text-gray-500" size={20} />

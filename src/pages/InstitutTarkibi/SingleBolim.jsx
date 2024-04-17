@@ -2,6 +2,7 @@ import axios from "axios";
 import React, { useEffect, useState } from "react";
 import { useTranslation } from "react-i18next";
 import { useParams } from "react-router-dom";
+import { lang } from "../../Components/Navbar/Navbarr";
 
 export default function SingleBolim() {
   const paramss = useParams();
@@ -13,7 +14,7 @@ export default function SingleBolim() {
   useEffect(() => {
     axios({
       method: "GET",
-      url: `http://45.55.64.16:8001/api/bulimlar/${param}`,
+      url: `http://45.55.194.72:8000/api/bulimlar/${param}`,
     })
       .then((res) => {
         setSingle(res?.data);
@@ -38,15 +39,27 @@ export default function SingleBolim() {
             <img
               className="object-cover md:h-[500px]"
               src={single.image}
-              alt={single.title}
+              alt={
+                lang == "en"
+                  ? single?.translations?.en?.title
+                  : single?.translations?.uz?.title
+              }
             />
             <h3 className="md:text-[30px] text-lg font-semibold leading-5 md:leading-[30px]">
-              {single.full_name}
+              {lang == "en"
+                ? single?.translations?.en?.full_name
+                : single?.translations?.uz?.full_name}
             </h3>
             <p className="md:text-lg text-sm pt-2 text-blue-500">
-              {single.title}
+              {lang == "en"
+                ? single?.translations?.en?.title
+                : single?.translations?.uz?.title}
             </p>
-            <p className="md:text-lg text-sm pt-2">{single.content}</p>
+            <p className="md:text-lg text-sm pt-2">
+              {lang == "en"
+                ? single?.translations?.en?.content
+                : single?.translations?.uz?.content}
+            </p>
           </div>
         </div>
       )}

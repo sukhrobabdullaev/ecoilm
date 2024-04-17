@@ -1,14 +1,17 @@
 import axios from "axios";
 import { useEffect, useState } from "react";
+import { useTranslation } from "react-i18next";
+import { lang } from "../../Components/Navbar/Navbarr";
 
 export default function Kutubxona() {
+  const { t } = useTranslation();
   const [data, setData] = useState([]);
 
   useEffect(() => {
     const fetchData = async () => {
       try {
         const response = await axios.get(
-          "http://45.55.64.16:8001/api/online-library"
+          "http://45.55.194.72:8000/api/online-library"
         );
         setData(response.data);
       } catch (error) {
@@ -26,12 +29,12 @@ export default function Kutubxona() {
           <div class="flex items-center justify-center">
             <div class="flex-grow border-t border-black"></div>
             <p class="text-center px-4 lg:text-[32px] text-[20px]">
-              ONLINE KUTUBXONA
+              {t("library")}
             </p>
             <div class="flex-grow border-t border-black"></div>
           </div>
           <span className="text-center md:text-lg text-black/50 block">
-            EKOLOGIYA VA IQLIM O'ZGARISHIGA OID KITOBLAR
+            {t("libraryDesc")}
           </span>
         </div>
         <div className="flex flex-wrap gap-4  pb-10 py-4 justify-center">
@@ -43,10 +46,16 @@ export default function Kutubxona() {
               <img
                 className="w-[300px] h-auto object-cover mx-auto rounded-t-md"
                 src={el.image}
-                alt=""
+                alt={
+                  lang == "en"
+                    ? el?.translations?.en?.title
+                    : el?.translations?.uz?.title
+                }
               />
               <p className="md:text-base line-clamp-1 m-2 font-semibold">
-                {el.title}
+                {lang == "en"
+                  ? el?.translations?.en?.title
+                  : el?.translations?.uz?.title}
               </p>
               <div className="flex justify-end mb-2 mr-2">
                 <a

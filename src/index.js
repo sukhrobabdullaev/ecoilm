@@ -37,6 +37,7 @@ import SingleMudir from "./pages/InstitutTarkibi/SingleMudir";
 import SingleBolim from "./pages/InstitutTarkibi/SingleBolim";
 
 import "./i18n";
+import SingleRaxbariyat from "./pages/Rahbaryat/SingleRaxbariyat";
 
 const root = ReactDOM.createRoot(document.getElementById("root"));
 root.render(
@@ -68,6 +69,7 @@ root.render(
         <Route path="/institut-tarixi" element={<InstitutTarixi />} />
         <Route path="/mudirlar/:id" element={<SingleMudir />} />
         <Route path="/bolimlar/:id" element={<SingleBolim />} />
+        <Route path="/raxbaryat/:id" element={<SingleRaxbariyat />} />
       </Route>
     </Routes>
   </BrowserRouter>

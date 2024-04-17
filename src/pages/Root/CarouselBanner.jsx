@@ -16,7 +16,7 @@ const CarouselBanner = () => {
     const fetchData = async () => {
       try {
         const response = await axios.get(
-          "http://45.55.64.16:8001/api/images/main"
+          "http://45.55.194.72:8000/api/images/main"
         );
         setData(response.data);
       } catch (error) {

@@ -2,6 +2,7 @@ import axios from "axios";
 import { IoTimeOutline } from "react-icons/io5";
 import React, { useEffect, useState } from "react";
 import { Link, useNavigate } from "react-router-dom";
+import { lang } from "../../Components/Navbar/Navbarr";
 
 export const formatDate = (dateString) => {
   const date = new Date(dateString);
@@ -22,7 +23,7 @@ const LoyihalarThree = () => {
     const fetchData = async () => {
       try {
         const response = await axios.get(
-          "http://45.55.64.16:8001/api/loyihalar/latest/three"
+          "http://45.55.194.72:8000/api/loyihalar/latest/three"
         );
         setData(response.data);
       } catch (error) {
@@ -32,7 +33,7 @@ const LoyihalarThree = () => {
 
     fetchData();
   }, []);
-
+  console.log(data);
   return (
     <div className="flex md:flex-row flex-wrap flex-col gap-6 mt-10 items-center md:justify-between">
       {data.map((el) => (
@@ -43,13 +44,23 @@ const LoyihalarThree = () => {
           <img
             className="w-full h-[300px] object-cover rounded-tr-[20px]"
             src={el.image}
-            alt="loyiha"
+            alt={
+              lang == "en"
+                ? el?.translations?.en?.title
+                : el?.translations?.uz?.title
+            }
           />
           <div className="flex flex-col gap-4 p-4">
             <p className="md:text-[20px] font-semibold line-clamp-2">
-              {el.title}
+              {lang == "en"
+                ? el?.translations?.en?.title
+                : el?.translations?.uz?.title}
             </p>
-            <p className="text-sm line-clamp-3">{el.content}</p>
+            <p className="text-sm line-clamp-3">
+              {lang == "en"
+                ? el?.translations?.en?.content
+                : el?.translations?.uz?.content}
+            </p>
             <button
               type="button"
               className=" text-white bg-green-500 hover:bg-green-600 font-medium rounded-lg text-sm px-4 py-2"

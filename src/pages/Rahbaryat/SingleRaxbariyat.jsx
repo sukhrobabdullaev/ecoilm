@@ -4,7 +4,7 @@ import { useTranslation } from "react-i18next";
 import { useParams } from "react-router-dom";
 import { lang } from "../../Components/Navbar/Navbarr";
 
-export default function SingleMudir() {
+export default function SingleRaxbariyat() {
   const paramss = useParams();
   let param = paramss.id;
   const { t } = useTranslation();
@@ -14,7 +14,7 @@ export default function SingleMudir() {
   useEffect(() => {
     axios({
       method: "GET",
-      url: `http://45.55.194.72:8000/api/mudirlar/${param}`,
+      url: `http://45.55.194.72:8000/api/rahbariyat/${param}`,
     })
       .then((res) => {
         setSingle(res?.data);

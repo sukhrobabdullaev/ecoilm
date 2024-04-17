@@ -2,6 +2,7 @@ import axios from "axios";
 import { IoTimeOutline } from "react-icons/io5";
 import React, { useEffect, useState } from "react";
 import { useNavigate } from "react-router-dom";
+import { lang } from "../../Components/Navbar/Navbarr";
 
 const LatestNews = () => {
   const [data, setData] = useState([]);
@@ -12,7 +13,7 @@ const LatestNews = () => {
     const fetchData = async () => {
       try {
         const response = await axios.get(
-          "http://45.55.64.16:8001/api/news/latest/one"
+          "http://45.55.194.72:8000/api/news/latest/one"
         );
         setData(response.data[0]);
       } catch (error) {
@@ -32,7 +33,7 @@ const LatestNews = () => {
       month < 10 ? "0" : ""
     }${month}.${year}`;
   };
-
+  console.log(data);
   return (
     <>
       {data && (
@@ -43,10 +44,22 @@ const LatestNews = () => {
           <img
             className="md:w-[800px]  rounded-tr-xl rounded-tl-xl object-cover"
             src={data.image}
-            alt={data.title}
+            alt={
+              lang == "en"
+                ? data?.translations?.en?.title
+                : data?.translations?.uz?.title
+            }
           />
-          <h3 className="text-lg font-semibold line-clamp-2">{data.title}</h3>
-          <p className="text-[14px] line-clamp-3">{data.content}</p>
+          <h3 className="text-lg font-semibold line-clamp-2">
+            {lang == "en"
+              ? data?.translations?.en?.title
+              : data?.translations?.uz?.title}
+          </h3>
+          <p className="text-[14px] line-clamp-3">
+            {lang == "en"
+              ? data?.translations?.en?.content
+              : data?.translations?.uz?.content}
+          </p>
           <div className="flex items-center justify-between">
             <div className="flex gap-1 items-center">
               <IoTimeOutline className="text-gray-500" size={20} />

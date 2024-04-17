@@ -7,6 +7,7 @@ import LatestNews from "../Root/LatestNews";
 import "./news.css";
 import { t } from "i18next";
 import { useTranslation } from "react-i18next";
+import { lang } from "../../Components/Navbar/Navbarr";
 
 const Yangiliklar = () => {
   const { t } = useTranslation();
@@ -16,7 +17,7 @@ const Yangiliklar = () => {
   useEffect(() => {
     const fetchData = async () => {
       try {
-        const response = await axios.get("http://45.55.64.16:8001/api");
+        const response = await axios.get("http://45.55.194.72:8000/api");
         setData(response.data);
       } catch (error) {
         console.error("Error fetching data:", error);
@@ -62,12 +63,22 @@ const Yangiliklar = () => {
                 <img
                   className="md:w-full md:h-[250px]   rounded-tr-xl rounded-tl-xl object-cover"
                   src={el.image}
-                  alt={el.title}
+                  alt={
+                    lang == "en"
+                      ? el?.translations?.en?.title
+                      : el?.translations?.uz?.title
+                  }
                 />
                 <h3 className="text-lg font-semibold line-clamp-1">
-                  {el.title}
+                  {lang == "en"
+                    ? el?.translations?.en?.title
+                    : el?.translations?.uz?.title}
                 </h3>
-                <p className="text-[14px] line-clamp-2">{el.content}</p>
+                <p className="text-[14px] line-clamp-2">
+                  {lang == "en"
+                    ? el?.translations?.en?.content
+                    : el?.translations?.uz?.content}
+                </p>
                 <div className="flex items-center justify-between">
                   <div className="flex gap-1 items-center">
                     <IoTimeOutline className="text-gray-500" size={20} />
