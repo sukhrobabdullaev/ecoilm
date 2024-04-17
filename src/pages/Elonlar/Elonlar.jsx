@@ -2,6 +2,7 @@ import axios from "axios";
 import { IoTimeOutline } from "react-icons/io5";
 import React, { useEffect, useState } from "react";
 import { useNavigate } from "react-router-dom";
+import { useTranslation } from "react-i18next";
 
 export const formatDate = (dateString) => {
   const date = new Date(dateString);
@@ -14,6 +15,7 @@ export const formatDate = (dateString) => {
 };
 
 export default function Elonlar() {
+  const { t } = useTranslation();
   const [data, setData] = useState([]);
 
   const navigate = useNavigate();
@@ -36,12 +38,13 @@ export default function Elonlar() {
       <div className="flex flex-col md:gap-4 gap-1 py-10">
         <div class="flex items-center justify-center">
           <div class="flex-grow border-t border-black"></div>
-          <p class="text-center px-4 lg:text-[32px] text-[20px]">E'LONLAR</p>
+          <p class="text-center px-4 lg:text-[32px] text-[20px]">
+            {t("announcementsH")}
+          </p>
           <div class="flex-grow border-t border-black"></div>
         </div>
         <span className="text-center md:text-lg text-black/50 block">
-          ATROF-MUHIT VA TABIATNI MUHOFAZA QILISH TEXNOLOGIYALARI ILMIY-TADQIQOT
-          INSTITUTIDA OLIB BORILAYOTGAN E'LONLARI
+          {t("announcementsHDesc")}
         </span>
       </div>
       <div className="flex justify-center md:flex-row flex-wrap flex-col gap-4 items-center mb-10">

@@ -1,10 +1,12 @@
 import axios from "axios";
 import React, { useEffect, useState } from "react";
+import { useTranslation } from "react-i18next";
 import { useParams } from "react-router-dom";
 
 export default function SingleMudir() {
   const paramss = useParams();
   let param = paramss.id;
+  const { t } = useTranslation();
 
   const [single, setSingle] = useState(null);
 
@@ -20,7 +22,7 @@ export default function SingleMudir() {
         console.log(err);
       });
   }, []);
-  console.log(single);
+
   return (
     <div>
       {single && (
@@ -28,7 +30,7 @@ export default function SingleMudir() {
           <div class="flex items-center justify-center my-8 md:px-36">
             <div class="flex-grow border-t border-black"></div>
             <p class="text-center px-4 lg:text-[32px] text-[20px]">
-              BIOGRAFIYA
+              {t("briefH")}
             </p>
             <div class="flex-grow border-t border-black"></div>
           </div>

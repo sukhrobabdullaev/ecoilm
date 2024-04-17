@@ -9,8 +9,11 @@ import {
   FaYoutubeSquare,
 } from "react-icons/fa";
 import { YMaps, Map } from "@pbe/react-yandex-maps";
+import { useTranslation } from "react-i18next";
 
 export default function Footer() {
+  const { t } = useTranslation();
+
   return (
     <div className="py-10  px-10 flex md:gap-32 md:flex-row flex-col-reverse gap-10 items-center bg2 border-t border-t-[#00df9a]">
       <ul className="text-center">
@@ -25,9 +28,9 @@ export default function Footer() {
               alt="img"
             />
             <p className="lg:text-[12px] text-[10px] text-white md:w-[315px] font-normal flex flex-col text-center">
-              <span>ATROF-MUHIT VA TABIATNI</span>
-              <span>MUHOFAZA QILISH TEXNOLOGIYALARI</span>
-              <span>ILMIY-TADQIQOT INSTITUTI</span>
+              <span>{t("logo1")}</span>
+              <span>{t("logo2")}</span>
+              <span>{t("logo3")}</span>
             </p>
           </Link>
           <ul className="flex items-center gap-6">
@@ -68,20 +71,20 @@ export default function Footer() {
         <li className="text-[#807c7c] pt-5">
           <p className="tracking-tight  flex gap-1 md:gap-2">
             <FaCopyright className="mt-1" />
-            2024 ecoilm.uz Barcha huquqlar himoyalangan
+            {t("copyright")}
           </p>
         </li>
       </ul>
 
       <div className="right flex flex-col gap-2 md:text-base text-[14px] text-white opacity-85">
         <div className="flex gap-2">
-          <div className="key">Ishonch telefonlari:</div>
+          <div className="key">{t("hotlines")}</div>
           <div className="value">
             +998 71 207-11-07, &nbsp; +998 71 207-11-08{" "}
           </div>
         </div>
         <div className="flex gap-2">
-          <div className="key">Qisqa raqam:</div>
+          <div className="key">{t("shortNum")}</div>
           <div className="value">
             11 57 &nbsp;
             <a
@@ -89,24 +92,22 @@ export default function Footer() {
               target="_blank"
               // style="color: blue;"
             >
-              Reglament bilan tanishish
+              {t("reglament")}
             </a>
           </div>
         </div>
         <div className="flex gap-2">
-          <div className="key">Telefon:</div>
+          <div className="key">{t("phone")}</div>
           <div className="value">+998 71 207-07-70 (1117)</div>
         </div>
         <div className="flex gap-2">
-          <div className="key">Pochta:</div>
+          <div className="key">{t("mail")}</div>
           <a href="#" className="value footer_link_color">
             info@eco.gov.uz
           </a>
         </div>
         <div className="flex gap-2">
-          <div className="key">
-            Murojaatlarni qabul qilish va statusini tekshirish
-          </div>
+          <div className="key">{t("murojaat")}</div>
           <a
             href="https://t.me/ecogovuz_bot"
             className="value footer_link_color"

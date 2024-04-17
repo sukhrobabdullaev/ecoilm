@@ -16,19 +16,21 @@
   padding: 10px;
 }
 
-.translated-ltr {
-  margin-top: -40px;
-}
-
-.goog-te-banner-frame {
-  display: none;
-  margin-top: -20px;
-}
-
 .goog-logo-link {
   display: none !important;
 }
 
 .goog-te-gadget {
   color: black !important;
+}
+.VIpgJd-ZVi9od-l4eHX-hSRGPd {
+  display: none;
+}
+
+.VIpgJd-ZVi9od-ORHb-OEVmcd.skiptranslate {
+  display: none !important;
+}
+
+.goog-te-combo {
+  width: 80px;
 }

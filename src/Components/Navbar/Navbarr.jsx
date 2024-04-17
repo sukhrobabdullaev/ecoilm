@@ -4,16 +4,20 @@ import { Select, Menu, Dropdown } from "antd";
 
 import "./navbar.css";
 import GoogleTranslate from "../../GoogleTranslate";
+import { useTranslation, Trans } from "react-i18next";
+import i18n from "../../i18n";
 
 const Navbarr = () => {
+  const { t } = useTranslation();
+
   const [dropdownVisible, setDropdownVisible] = useState(false);
   const [dropdownVisibleYangilik, setDropdownVisibleYangilik] = useState(false);
   const [dropdownVisibleJurnallar, handleDropdownVisibleJurnallar] =
     useState(false);
   const [isMenu, setIsMenu] = useState(false);
 
-  const handleChange = (value) => {
-    console.log(value);
+  const handleChangeLanguage = (value) => {
+    i18n.changeLanguage(value); // Change the language in i18next
   };
 
   const handleDropdownVisibleChange = (flag) => {
@@ -28,12 +32,12 @@ const Navbarr = () => {
     <Menu className="right-dropdown">
       <Menu.Item key="7">
         <Link to="/laboratoriya-mudrlari" onClick={closeMenu}>
-          Laboratoriya mudrlari
+          {t("team1")}
         </Link>
       </Menu.Item>
       <Menu.Item key="8">
         <Link to="/bolim-boshliqlari" onClick={closeMenu}>
-          Bo'lim boshliqlari
+          {t("team2")}
         </Link>
       </Menu.Item>
     </Menu>
@@ -43,39 +47,39 @@ const Navbarr = () => {
     <Menu className="">
       <Menu.Item key="1">
         <Link to="/tuzulma" onClick={closeMenu}>
-          Tuzilma
+          {t("about1")}
         </Link>
       </Menu.Item>
       <Menu.Item key="2">
         <Link to="/labaratoriya" onClick={closeMenu}>
-          Laboratoriya va bo'limlar
+          {t("about2")}
         </Link>
       </Menu.Item>
       <Menu.Item key="3">
         <Link to="/raxbaryat" onClick={closeMenu}>
-          Rahbariyat
+          {t("about3")}
         </Link>
       </Menu.Item>
       <Menu.Item key="4">
         <Dropdown overlay={labaratoriyaMenu}>
           <a className="ant-dropdown-link" onClick={(e) => e.preventDefault()}>
-            Institut tarkibi
+            {t("about4")}
           </a>
         </Dropdown>
       </Menu.Item>
       <Menu.Item key="5">
         <Link to="/institut-tarixi" onClick={closeMenu}>
-          Institut tarixi
+          {t("about5")}
         </Link>
       </Menu.Item>
       <Menu.Item key="6">
         <Link to="/boglanish" onClick={closeMenu}>
-          Bog'lanish
+          {t("about6")}
         </Link>
       </Menu.Item>
       <Menu.Item key="7">
         <Link to="/loyhalar" onClick={closeMenu}>
-          Loyihalar
+          {t("about7")}
         </Link>
       </Menu.Item>
     </Menu>
@@ -84,12 +88,12 @@ const Navbarr = () => {
     <Menu className="">
       <Menu.Item key="1">
         <Link to="/yangiliklar" onClick={closeMenu}>
-          Yangiliklar
+          {t("news")}
         </Link>
       </Menu.Item>
       <Menu.Item key="2">
         <Link to="/elonlar" onClick={closeMenu}>
-          E'lonlar
+          {t("announcements")}
         </Link>
       </Menu.Item>
     </Menu>
@@ -98,17 +102,17 @@ const Navbarr = () => {
     <Menu className="">
       <Menu.Item key="1">
         <Link to="/jurnallar" onClick={closeMenu}>
-          Jurnallar
+          {t("journals")}
         </Link>
       </Menu.Item>
       <Menu.Item key="2">
         <Link to="/maqola" onClick={closeMenu}>
-          Maqola chop etish
+          {t("journal1")}
         </Link>
       </Menu.Item>
       <Menu.Item key="2">
         <Link to="/kutubxona" onClick={closeMenu}>
-          Online kutubxona
+          {t("journal2")}
         </Link>
       </Menu.Item>
     </Menu>
@@ -117,10 +121,7 @@ const Navbarr = () => {
   return (
     <div>
       <div className="scroll-left">
-        <p className="text-red-500">
-          Atrof muhit va tabiatni muhofaza qilish texnalogiyalari ilmiy tadqiqot
-          instituti rasmiy web sayti test rejimida ishlamoqda
-        </p>
+        <p className="text-red-500">{t("testmode")}</p>
       </div>
       <div>
         <nav className="border-gray-200 bg-gray-900">
@@ -135,9 +136,9 @@ const Navbarr = () => {
                 alt="img"
               />
               <p className="ms-3 sm:text-[10px] text-white md:w-[315px] font-normal hidden md:flex flex-col ">
-                <span>ATROF-MUHIT VA TABIATNI</span>
-                <span>MUHOFAZA QILISH TEXNOLOGIYALARI</span>
-                <span>ILMIY-TADQIQOT INSTITUTI</span>
+                <span>{t("logo1")}</span>
+                <span>{t("logo2")}</span>
+                <span>{t("logo3")}</span>
               </p>
             </Link>
             {isMenu ? (
@@ -207,7 +208,7 @@ const Navbarr = () => {
                       aria-current="page"
                       onClick={(e) => e.preventDefault()}
                     >
-                      Biz haqimizda
+                      {t("about")}
                     </a>
                   </Dropdown>
                 </li>
@@ -224,7 +225,7 @@ const Navbarr = () => {
                       aria-current="page"
                       onClick={(e) => e.preventDefault()}
                     >
-                      Yangiliklar
+                      {t("news")}
                     </a>
                   </Dropdown>
                 </li>
@@ -241,7 +242,7 @@ const Navbarr = () => {
                       aria-current="page"
                       onClick={(e) => e.preventDefault()}
                     >
-                      Jurnallar
+                      {t("journals")}
                     </a>
                   </Dropdown>
                 </li>
@@ -251,7 +252,7 @@ const Navbarr = () => {
                     className="block py-2 px-3 rounded hover:bg-gray-100 md:hover:bg-transparent md:border-0 md:p-0 text-white"
                     onClick={closeMenu}
                   >
-                    Ilmiy kengash
+                    {t("scientific")}
                   </Link>
                 </li>
                 <li>
@@ -260,27 +261,26 @@ const Navbarr = () => {
                     className="block py-2 px-3 rounded hover:bg-gray-100 md:hover:bg-transparent md:border-0  md:p-0 text-white "
                     onClick={closeMenu}
                   >
-                    Ilmiy texnik kengash
+                    {t("technic")}
                   </a>
                 </li>
               </ul>
               <div className=" bg-gray-900 flex items-start justify-center  border-gray-700 lg:pb-0 pb-4">
                 <Select
-                  defaultValue="uz"
-                  style={{ width: 60 }}
-                  onChange={handleChange} // This line was changed
+                  defaultValue={i18n.language} // Set default value to the current language
+                  style={{ width: 70 }}
+                  onChange={handleChangeLanguage} // Call handleChangeLanguage function when language is changed
                   options={[
                     {
                       value: "uz",
-                      label: "Uz",
+                      label: t("Uz"), // Translate language names
                     },
                     {
-                      value: "eng",
-                      label: "Eng",
+                      value: "en",
+                      label: t("Eng"), // Translate language names
                     },
                   ]}
                 />
-                <GoogleTranslate />
               </div>
             </div>
           </div>

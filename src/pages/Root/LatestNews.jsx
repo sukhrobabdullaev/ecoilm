@@ -35,33 +35,35 @@ const LatestNews = () => {
 
   return (
     <>
-      <div
-        className="md:w-[800px] h-auto rounded-xl bg-white shadow-2xl hover:shadow-xl cursor-pointer p-4 flex flex-col gap-2"
-        key={data.id}
-      >
-        <img
-          className="md:w-[800px]  rounded-tr-xl rounded-tl-xl object-cover"
-          src={data.image}
-          alt={data.title}
-        />
-        <h3 className="text-lg font-semibold line-clamp-2">{data.title}</h3>
-        <p className="text-[14px] line-clamp-3">{data.content}</p>
-        <div className="flex items-center justify-between">
-          <div className="flex gap-1 items-center">
-            <IoTimeOutline className="text-gray-500" size={20} />
-            <p className="text-gray-500 font-semibold">
-              {formatDate(data.created_at)}
-            </p>
+      {data && (
+        <div
+          className="md:w-[800px] h-auto rounded-xl bg-white shadow-2xl hover:shadow-xl cursor-pointer p-4 flex flex-col gap-2"
+          key={data.id}
+        >
+          <img
+            className="md:w-[800px]  rounded-tr-xl rounded-tl-xl object-cover"
+            src={data.image}
+            alt={data.title}
+          />
+          <h3 className="text-lg font-semibold line-clamp-2">{data.title}</h3>
+          <p className="text-[14px] line-clamp-3">{data.content}</p>
+          <div className="flex items-center justify-between">
+            <div className="flex gap-1 items-center">
+              <IoTimeOutline className="text-gray-500" size={20} />
+              <p className="text-gray-500 font-semibold">
+                {formatDate(data.created_at)}
+              </p>
+            </div>
+            <button
+              type="button"
+              className=" text-white bg-green-500 hover:bg-green-600 font-medium rounded-lg text-sm px-4 py-2"
+              onClick={() => navigate(`/news/${data.id}`)}
+            >
+              Batafsil
+            </button>
           </div>
-          <button
-            type="button"
-            className=" text-white bg-green-500 hover:bg-green-600 font-medium rounded-lg text-sm px-4 py-2"
-            onClick={() => navigate(`/news/${data.id}`)}
-          >
-            Batafsil
-          </button>
         </div>
-      </div>
+      )}
     </>
   );
 };

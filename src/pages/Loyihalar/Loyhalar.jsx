@@ -2,8 +2,10 @@ import axios from "axios";
 import { IoTimeOutline } from "react-icons/io5";
 import React, { useEffect, useState } from "react";
 import { Link, useNavigate } from "react-router-dom";
+import { useTranslation } from "react-i18next";
 
 export default function Loyhalar() {
+  const { t } = useTranslation();
   const [data, setData] = useState([]);
 
   const navigate = useNavigate();
@@ -28,12 +30,13 @@ export default function Loyhalar() {
         <div className="flex flex-col md:gap-4 gap-1">
           <div class="flex items-center justify-center">
             <div class="flex-grow border-t border-black"></div>
-            <p class="text-center px-4 lg:text-[32px] text-[20px]">LOYIHALAR</p>
+            <p class="text-center px-4 lg:text-[32px] text-[20px]">
+              {t("projects")}
+            </p>
             <div class="flex-grow border-t border-black"></div>
           </div>
           <span className="text-center md:text-lg text-black/50 block">
-            ATROF-MUHIT VA TABIATNI MUHOFAZA QILISH TEXNOLOGIYALARI
-            ILMIY-TADQIQOT INSTITUTIDA OLIB BORILAYOTGAN LOYIHALAR
+            {t("proDesc")}
           </span>
         </div>
         <div className="flex md:flex-row flex-wrap flex-col gap-6 mt-10 items-center md:justify-between">

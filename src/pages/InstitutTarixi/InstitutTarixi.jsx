@@ -1,7 +1,9 @@
 import axios from "axios";
 import React, { useEffect, useState } from "react";
+import { useTranslation } from "react-i18next";
 
 const InstitutTarixi = () => {
+  const { t } = useTranslation();
   const [single, setSingle] = useState(null);
 
   useEffect(() => {
@@ -24,13 +26,12 @@ const InstitutTarixi = () => {
           <div class="flex items-center justify-center">
             <div class="flex-grow border-t border-black"></div>
             <p class="text-center px-4 lg:text-[32px] text-[20px]">
-              ISTITUT TARIXI
+              {t("history")}
             </p>
             <div class="flex-grow border-t border-black"></div>
           </div>
           <span className="text-center md:text-lg text-black/50 block">
-            ATROF-MUHIT VA TABIATNI MUHOFAZA QILISH TEXNOLOGIYALARI
-            ILMIY-TADQIQOT INSTITUT TARIXI
+            {t("historyDesc")}
           </span>
         </div>
         {single && (

@@ -7,29 +7,10 @@ import LoyihalarThree from "./LoyihalarThree";
 import CarouselBanner from "./CarouselBanner";
 
 import "./root.css";
-const matn = `Toshkent suv ta’minoti, kanalizatsiya, gidrotexnika inshootlari
-va muhandislik gidrogeologiyasi (ToshNII "VODGEO") instituti,
-1960 yilda Markaziy Osiyo arxitektura va qurilish ilmiy-tadqiqot
-institutida aholi punktlari sanoatining suv xo‘jaligi
-laboratoriyasi sifatida tashkil etilgan, 1964 yilda U "VODGEO"
-Butunittifoq ilmiy-tadqiqot institutida suv xo‘jaligi bo‘limi,
-1978 yilda esa "VODGEO" Butunittifoq ilmiy-tadqiqot
-institutining Toshkent filialiga aylantirildi. 1992 yil dekabr
-oyidan boshlab institut O‘zbekiston Respublikasi Tabiatni
-muhofaza qilish davlat qo‘mitasining tarkibiy bo‘linmasi
-hisoblanadi. O‘zbekiston Respublikasi Prezidentining 2017 yil 21
-apreldagi PQ-2915-sonli "O‘zbekiston Respublikasi Ekologiya va
-atrof-muhitni muhofaza qilish davlat qo‘mitasi faoliyatini
-tashkil etishni ta’minlash chora-tadbirlari to‘g‘risida" gi
-farmonini bajarish maqsadida, shuningdek, 2017 yil 26 apreldagi
-146-sonli va 17-sonli, 91-son buyruqlariga muvofiq.
-Guvohnomaning 2017 yil 21 avgustdagi 538681-sonli ma’lumotiga
-ko‘ra, O‘zbekiston Respublikasi Ekologiya va atrof-muhitni
-muhofaza qilish davlat qo‘mitasi, O‘zbekiston Respublikasi
-Ekologiya va atrof-muhitni muhofaza qilish ilmiy-tadqiqot
-instituti ish faoliyatini boshladi.`;
+import { useTranslation } from "react-i18next";
 
 export default function Root() {
+  const { t } = useTranslation();
   return (
     <div>
       <CarouselBanner />
@@ -39,13 +20,12 @@ export default function Root() {
             <div class="flex items-center justify-center">
               <div class="flex-grow border-t border-black"></div>
               <p class="text-center px-4 lg:text-[32px] text-[20px]">
-                SO'NGI YANGILIKLAR
+                {t("latestNews")}
               </p>
               <div class="flex-grow border-t border-black"></div>
             </div>
             <span className="text-center md:text-lg text-black/50 block">
-              ATROF-MUHIT VA TABIATNI MUHOFAZA QILISH TEXNOLOGIYALARI
-              ILMIY-TADQIQOT INSTITUTI YANGILIKLARI
+              {t("newsDesc")}
             </span>
           </div>
           <News />
@@ -57,7 +37,7 @@ export default function Root() {
           <div className="flex flex-col md:gap-4 gap-1 py-2">
             <div class="flex items-center justify-center">
               <p class="text-center px-4 lg:text-[32px] text-[20px]">
-                E'LONLAR
+                {t("announcementsH")}
               </p>
               <div class="flex-grow border-t border-black"></div>
               <div class="flex-grow border-t border-black"></div>
@@ -73,12 +53,12 @@ export default function Root() {
             <div class="flex items-center justify-center">
               <div class="flex-grow border-t border-black"></div>
               <p class="text-center px-4 lg:text-[32px] text-[20px]">
-                SO'NGI JURNALLAR
+                {t("latestJournals")}
               </p>
               <div class="flex-grow border-t border-black"></div>
             </div>
             <span className="text-center md:text-lg text-black/50 block">
-              EKOLOGIYA XABARNOMASI JURNALINING SO'NGI SONLARI
+              {t("journalsDesc")}
             </span>
           </div>
           <JurnallarThree />
@@ -91,13 +71,12 @@ export default function Root() {
             <div class="flex items-center justify-center">
               <div class="flex-grow border-t border-black"></div>
               <p class="text-center px-4 lg:text-[32px] text-[20px]">
-                LOYIHALAR
+                {t("projects")}
               </p>
               <div class="flex-grow border-t border-black"></div>
             </div>
             <span className="text-center md:text-lg text-black/50 block">
-              ATROF-MUHIT VA TABIATNI MUHOFAZA QILISH TEXNOLOGIYALARI
-              ILMIY-TADQIQOT INSTITUTIDA OLIB BORILAYOTGAN LOYIHALAR
+              {t("proDesc")}
             </span>
           </div>
           <LoyihalarThree />
@@ -110,13 +89,12 @@ export default function Root() {
             <div class="flex items-center justify-center">
               <div class="flex-grow border-t border-white"></div>
               <p class="text-center px-4 lg:text-[32px] text-[20px]">
-                BIZ HAQIMIZDA
+                {t("aboutH")}
               </p>
               <div class="flex-grow border-t border-white"></div>
             </div>
             <span className="text-center md:text-[22px] text-white/50 block">
-              Atrof muhit va tabiatni muhofaza qilish texnologiyalari ilmiy
-              tadqiqot instituti haqida qisqacha ma'lumot
+              {t("aboutDesc")}
             </span>
           </div>
           <div className="flex md:flex-row gap-10 flex-col items-center mt-4">
@@ -125,7 +103,7 @@ export default function Root() {
             </div>
             <div className="basis-1/2">
               <p className="text-[#fefefe] text-[16px] lg:pt-5 text-justify pr-3">
-                {matn}
+                {t("aboutInfo")}
               </p>
             </div>
           </div>
@@ -137,7 +115,7 @@ export default function Root() {
           <div class="flex items-center justify-center">
             <div class="flex-grow border-t border-black"></div>
             <p class="text-center px-4 lg:text-[32px] text-[20px]">
-              BIZNING HAMKORLAR
+              {t("partners")}
             </p>
             <div class="flex-grow border-t border-black"></div>
           </div>

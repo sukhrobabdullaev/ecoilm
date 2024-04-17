@@ -9,6 +9,7 @@ import {
   Routes,
 } from "react-router-dom";
 import "./index.css";
+
 import Tuzulma from "./pages/Tuzulma/Tuzulma";
 // import Vazifa from "./pages/Vazifa/Vazifa";
 import Labaratoriye from "./pages/Labaratoriya/Labaratoriye";
@@ -34,6 +35,9 @@ import BolimBoshliqlari from "./pages/InstitutTarkibi/BolimBoshliqlari";
 import InstitutTarixi from "./pages/InstitutTarixi/InstitutTarixi";
 import SingleMudir from "./pages/InstitutTarkibi/SingleMudir";
 import SingleBolim from "./pages/InstitutTarkibi/SingleBolim";
+
+import "./i18n";
+
 const root = ReactDOM.createRoot(document.getElementById("root"));
 root.render(
   <BrowserRouter>

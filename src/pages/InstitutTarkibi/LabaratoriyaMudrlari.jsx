@@ -1,8 +1,10 @@
 import axios from "axios";
 import { useEffect, useState } from "react";
+import { useTranslation } from "react-i18next";
 import { useNavigate } from "react-router-dom";
 
 const LabaratoriyaMudrlari = () => {
+  const { t } = useTranslation();
   const [data, setData] = useState([]);
 
   const navigate = useNavigate();
@@ -26,11 +28,10 @@ const LabaratoriyaMudrlari = () => {
     <div className="bg-[#eee]">
       <div className="container">
         <p className="text-center text-blue-950 mb-3 mt-8 text-2xl md:text-4xl font-semibold">
-          Laboratoriya mudirlari
+          {t("team1")}
         </p>
         <p className="text-center text-sm md:text-[20px] text-black/60">
-          Atrof muhit va tabiatni muhofaza qilish texnologiyalari ilmiy-tadqiqot
-          instituti laboratoriya mudirlari
+          {t("team1Desc")}
         </p>
         <div className="flex items-center flex-col gap-2 mt-6 ">
           {data.map((el) => (
@@ -46,11 +47,11 @@ const LabaratoriyaMudrlari = () => {
 
                 <div className="flex flex-col gap-2">
                   <div className="flex items-center gap-1">
-                    <span>Telefon: </span>
+                    <span>{t("phone")}</span>
                     <span>{el.p_number}</span>
                   </div>
                   <div className="flex items-center gap-1">
-                    <span>Elektron pochta: </span>
+                    <span>{t("emaile")}</span>
                     <span>{el.email}</span>
                   </div>
                 </div>
@@ -59,7 +60,7 @@ const LabaratoriyaMudrlari = () => {
                   className="text-blue-500"
                   onClick={() => navigate(`/mudirlar/${el.id}`)}
                 >
-                  Qisqa biografiya...
+                  {t("brief")}
                 </button>
               </div>
               <img
