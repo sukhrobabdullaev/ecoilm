@@ -4,8 +4,10 @@ import { useParams } from "react-router-dom";
 import { formatDate } from "../Root/News";
 import { IoTimeOutline } from "react-icons/io5";
 import { lang } from "../../Components/Navbar/Navbarr";
+import { useTranslation } from "react-i18next";
 
 export default function IlmiyKengashSingle() {
+  const { t } = useTranslation();
   const paramss = useParams();
   let param = paramss.id;
 
@@ -32,7 +34,7 @@ export default function IlmiyKengashSingle() {
               <div className="flex items-center justify-center md:my-8 my-4 md:px-36">
                 <div className="flex-grow border-t border-black"></div>
                 <p className="text-center px-4 lg:text-[32px] text-[20px]">
-                  BATAFSIL
+                  {t("batafsil")}
                 </p>
                 <div className="flex-grow border-t border-black"></div>
               </div>

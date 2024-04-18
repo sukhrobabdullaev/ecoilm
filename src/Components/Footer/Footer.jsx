@@ -15,7 +15,7 @@ export default function Footer() {
   const { t } = useTranslation();
 
   return (
-    <div className="py-10  px-10 flex md:gap-32 md:flex-row flex-col-reverse gap-10 items-center bg2 border-t border-t-[#00df9a]">
+    <div className="py-10 px-10 flex justify-center md:gap-32 md:flex-row flex-col-reverse gap-10 items-center bg2 border-t border-t-[#00df9a]">
       <ul className="text-center">
         <li className="flex flex-col items-center">
           <Link
@@ -78,43 +78,20 @@ export default function Footer() {
 
       <div className="right flex flex-col gap-2 md:text-base text-[14px] text-white opacity-85">
         <div className="flex gap-2">
-          <div className="key">{t("hotlines")}</div>
-          <div className="value">
-            +998 71 207-11-07, &nbsp; +998 71 207-11-08{" "}
-          </div>
+          {t("phone")}
+          (+998 71) 277 89-22 (+998 71) 277 69-83
         </div>
         <div className="flex gap-2">
-          <div className="key">{t("shortNum")}</div>
-          <div className="value">
-            11 57 &nbsp;
-            <a
-              href="/archive/img/coll-center.pdf"
-              target="_blank"
-              // style="color: blue;"
-            >
-              {t("reglament")}
-            </a>
-          </div>
+          {t("faks")}
+          (+998 71) 277 89-22
         </div>
-        <div className="flex gap-2">
-          <div className="key">{t("phone")}</div>
-          <div className="value">+998 71 207-07-70 (1117)</div>
+        <div className="flex">
+          {t("emaile")}
+          ecoilm@umail.uz
         </div>
-        <div className="flex gap-2">
-          <div className="key">{t("mail")}</div>
-          <a href="#" className="value footer_link_color">
-            info@eco.gov.uz
-          </a>
-        </div>
-        <div className="flex gap-2">
-          <div className="key">{t("murojaat")}</div>
-          <a
-            href="https://t.me/ecogovuz_bot"
-            className="value footer_link_color"
-            target="_blank"
-          >
-            ecogovuz_bot
-          </a>
+        <div className="flex">
+          {t("manzil")}
+          {t("manzilVal")}
         </div>
       </div>
       <YMaps>

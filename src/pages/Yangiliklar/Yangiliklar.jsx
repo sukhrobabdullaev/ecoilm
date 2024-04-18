@@ -91,7 +91,7 @@ const Yangiliklar = () => {
                     className=" text-white bg-green-500 hover:bg-green-600 font-medium rounded-lg text-sm px-4 py-2"
                     onClick={() => navigate(`/news/${el.id}`)}
                   >
-                    Batafsil
+                    {t("batafsil")}
                   </button>
                 </div>
               </div>

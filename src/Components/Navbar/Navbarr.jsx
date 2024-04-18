@@ -17,11 +17,10 @@ const Navbarr = () => {
   const [dropdownVisibleJurnallar, handleDropdownVisibleJurnallar] =
     useState(false);
   const [isMenu, setIsMenu] = useState(false);
-  const [defaultLanguage, setDefaultLanguage] = useState(i18n.language);
 
   const handleChangeLanguage = (value) => {
-    window.location.reload();
     i18n.changeLanguage(value);
+    window.location.reload(); // Reload the page to reflect language change
   };
 
   const handleDropdownVisibleChange = (flag) => {
@@ -270,7 +269,7 @@ const Navbarr = () => {
               </ul>
               <div className=" bg-gray-900 flex items-start justify-center  border-gray-700 lg:pb-0 pb-4">
                 <Select
-                  defaultValue={defaultLanguage}
+                  defaultValue={i18n.language}
                   style={{ width: 70 }}
                   onChange={handleChangeLanguage}
                   options={[

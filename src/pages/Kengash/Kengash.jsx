@@ -67,7 +67,7 @@ export default function Kengash() {
                   className=" text-white bg-blue-500 hover:bg-blue-600 font-medium rounded-lg text-sm px-4 py-2"
                   onClick={() => navigate(`/kengash/${el.id}`)}
                 >
-                  Batafsil
+                  {t("batafsil")}
                 </button>
               </div>
             </div>

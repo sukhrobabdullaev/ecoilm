@@ -3,6 +3,7 @@ import { IoTimeOutline } from "react-icons/io5";
 import React, { useEffect, useState } from "react";
 import { Link, useNavigate } from "react-router-dom";
 import { lang } from "../../Components/Navbar/Navbarr";
+import { useTranslation } from "react-i18next";
 
 export const formatDate = (dateString) => {
   const date = new Date(dateString);
@@ -14,6 +15,7 @@ export const formatDate = (dateString) => {
   }${month}.${year}`;
 };
 const News = () => {
+  const { t } = useTranslation();
   const [data, setData] = useState([]);
 
   const navigate = useNavigate();
@@ -70,7 +72,7 @@ const News = () => {
               className=" text-white bg-green-500 hover:bg-green-600 font-medium rounded-lg text-sm px-4 py-2"
               onClick={() => navigate(`/news/${el.id}`)}
             >
-              Batafsil
+              {t("batafsil")}
             </button>
           </div>
         </div>

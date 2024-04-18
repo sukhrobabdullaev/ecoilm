@@ -15,8 +15,20 @@ i18n
   // init i18next
   // for all options read: https://www.i18next.com/overview/configuration-options
   .init({
+    supportedLngs: ["en", "uz"],
     fallbackLng: "uz",
     debug: false,
+    resources: {
+      uz: {
+        translation: require("./locales/uz/translation.json"),
+      },
+      en: {
+        translation: require("./locales/en/translation.json"),
+      },
+    },
+    interpolation: {
+      escapeValue: false,
+    },
   });
 
 export default i18n;
