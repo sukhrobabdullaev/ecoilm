@@ -19,7 +19,7 @@ const JurnallarThree = () => {
     const fetchData = async () => {
       try {
         const response = await axios.get(
-          "http://45.55.194.72:8000/api/journals/latest/four"
+          "https://ecoilm.uz/api/journals/latest/four"
         );
         setData(response.data);
       } catch (error) {

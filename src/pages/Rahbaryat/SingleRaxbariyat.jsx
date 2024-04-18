@@ -14,7 +14,7 @@ export default function SingleRaxbariyat() {
   useEffect(() => {
     axios({
       method: "GET",
-      url: `http://45.55.194.72:8000/api/rahbariyat/${param}`,
+      url: `https://ecoilm.uz/api/rahbariyat/${param}`,
     })
       .then((res) => {
         setSingle(res?.data);

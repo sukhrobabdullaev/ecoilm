@@ -14,9 +14,7 @@ export default function Loyhalar() {
   useEffect(() => {
     const fetchData = async () => {
       try {
-        const response = await axios.get(
-          "http://45.55.194.72:8000/api/loyihalar"
-        );
+        const response = await axios.get("https://ecoilm.uz/api/loyihalar");
         setData(response.data);
       } catch (error) {
         console.error("Error fetching data:", error);

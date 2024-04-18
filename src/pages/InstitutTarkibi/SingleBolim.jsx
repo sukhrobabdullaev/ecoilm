@@ -14,7 +14,7 @@ export default function SingleBolim() {
   useEffect(() => {
     axios({
       method: "GET",
-      url: `http://45.55.194.72:8000/api/bulimlar/${param}`,
+      url: `https://ecoilm.uz/api/bulimlar/${param}`,
     })
       .then((res) => {
         setSingle(res?.data);

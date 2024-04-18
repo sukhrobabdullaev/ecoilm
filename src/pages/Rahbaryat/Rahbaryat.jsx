@@ -13,9 +13,7 @@ export default function Rahbaryat() {
   useEffect(() => {
     const fetchData = async () => {
       try {
-        const response = await axios.get(
-          "http://45.55.194.72:8000/api/rahbariyat"
-        );
+        const response = await axios.get("https://ecoilm.uz/api/rahbariyat");
         setData(response.data);
       } catch (error) {
         console.error("Error fetching data:", error);

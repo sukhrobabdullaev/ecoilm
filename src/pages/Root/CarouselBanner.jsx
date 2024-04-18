@@ -15,9 +15,7 @@ const CarouselBanner = () => {
   useEffect(() => {
     const fetchData = async () => {
       try {
-        const response = await axios.get(
-          "http://45.55.194.72:8000/api/images/main"
-        );
+        const response = await axios.get("https://ecoilm.uz/api/images/main");
         setData(response.data);
       } catch (error) {
         console.error("Error fetching data:", error);

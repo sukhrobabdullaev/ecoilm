@@ -14,7 +14,7 @@ export default function ElonlarSingle() {
   useEffect(() => {
     axios({
       method: "GET",
-      url: `http://45.55.194.72:8000/api/elonlar/${param}`,
+      url: `https://ecoilm.uz/api/elonlar/${param}`,
     })
       .then((res) => {
         setSingle(res?.data);

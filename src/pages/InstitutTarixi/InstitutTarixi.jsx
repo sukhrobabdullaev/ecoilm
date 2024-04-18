@@ -10,7 +10,7 @@ const InstitutTarixi = () => {
   useEffect(() => {
     axios({
       method: "GET",
-      url: `http://45.55.194.72:8000/api/tarix`,
+      url: `https://ecoilm.uz/api/tarix`,
     })
       .then((res) => {
         setSingle(res?.data);

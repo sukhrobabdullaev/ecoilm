@@ -14,7 +14,7 @@ export default function NewsSingle() {
   useEffect(() => {
     axios({
       method: "GET",
-      url: `http://45.55.194.72:8000/api/${param}`,
+      url: `https://ecoilm.uz/api/${param}`,
     })
       .then((res) => {
         setSingle(res?.data);

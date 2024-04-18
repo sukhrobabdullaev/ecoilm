@@ -268,7 +268,9 @@ const Navbarr = () => {
               </ul>
               <div className=" bg-gray-900 flex items-start justify-center  border-gray-700 lg:pb-0 pb-4">
                 <Select
-                  defaultValue={18n.language} // Set default value to the current language
+                  defaultValue={
+                    i18n.language == "en-US" ? "Eng" : i18n.language
+                  } // Set default value to the current language
                   style={{ width: 70 }}
                   onChange={handleChangeLanguage} // Call handleChangeLanguage function when language is changed
                   options={[

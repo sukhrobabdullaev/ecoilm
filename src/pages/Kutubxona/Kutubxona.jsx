@@ -11,7 +11,7 @@ export default function Kutubxona() {
     const fetchData = async () => {
       try {
         const response = await axios.get(
-          "http://45.55.194.72:8000/api/online-library"
+          "https://ecoilm.uz/api/online-library"
         );
         setData(response.data);
       } catch (error) {

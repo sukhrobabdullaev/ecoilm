@@ -22,7 +22,7 @@ const ElonlarThree = () => {
     const fetchData = async () => {
       try {
         const response = await axios.get(
-          "http://45.55.194.72:8000/api/elonlar/latest/three"
+          "https://ecoilm.uz/api/elonlar/latest/three"
         );
         setData(response.data);
       } catch (error) {

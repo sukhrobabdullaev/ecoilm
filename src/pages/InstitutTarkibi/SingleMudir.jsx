@@ -14,7 +14,7 @@ export default function SingleMudir() {
   useEffect(() => {
     axios({
       method: "GET",
-      url: `http://45.55.194.72:8000/api/mudirlar/${param}`,
+      url: `https://ecoilm.uz/api/mudirlar/${param}`,
     })
       .then((res) => {
         setSingle(res?.data);
