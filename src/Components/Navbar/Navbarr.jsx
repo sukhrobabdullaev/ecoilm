@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
 import { Select, Menu, Dropdown } from "antd";
 
@@ -6,6 +6,7 @@ import "./navbar.css";
 import { useTranslation } from "react-i18next";
 
 import i18n from "../../i18n";
+
 export const lang = localStorage.getItem("i18nextLng");
 
 const Navbarr = () => {
@@ -16,6 +17,7 @@ const Navbarr = () => {
   const [dropdownVisibleJurnallar, handleDropdownVisibleJurnallar] =
     useState(false);
   const [isMenu, setIsMenu] = useState(false);
+  const [defaultLanguage, setDefaultLanguage] = useState(i18n.language);
 
   const handleChangeLanguage = (value) => {
     window.location.reload();
@@ -268,9 +270,9 @@ const Navbarr = () => {
               </ul>
               <div className=" bg-gray-900 flex items-start justify-center  border-gray-700 lg:pb-0 pb-4">
                 <Select
-                  defaultValue={i18n.language == "uz-UZ" ? "uz" : i18n.language} // Set default value to the current language
+                  defaultValue={defaultLanguage}
                   style={{ width: 70 }}
-                  onChange={handleChangeLanguage} // Call handleChangeLanguage function when language is changed
+                  onChange={handleChangeLanguage}
                   options={[
                     {
                       value: "uz",

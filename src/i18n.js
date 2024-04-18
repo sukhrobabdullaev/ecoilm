@@ -15,8 +15,7 @@ i18n
   // init i18next
   // for all options read: https://www.i18next.com/overview/configuration-options
   .init({
-    lng: "uz-UZ",
-    fallbackLng: "uz-UZ",
+    fallbackLng: "uz",
     debug: false,
   });
 
