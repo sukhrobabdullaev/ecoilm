@@ -75,12 +75,12 @@ const Navbarr = () => {
         </Link>
       </Menu.Item>
       <Menu.Item key="6">
-        <Link to="/boglanish" onClick={closeMenu}>
+        <Link to="/loyhalar" onClick={closeMenu}>
           {t("about6")}
         </Link>
       </Menu.Item>
       <Menu.Item key="7">
-        <Link to="/loyhalar" onClick={closeMenu}>
+        <Link to="/boglanish" onClick={closeMenu}>
           {t("about7")}
         </Link>
       </Menu.Item>

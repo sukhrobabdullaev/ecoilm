@@ -64,7 +64,7 @@ const LabaratoriyaMudrlari = () => {
                 </div>
 
                 <button
-                  className="text-blue-500"
+                  className="text-blue-500 text-start"
                   onClick={() => navigate(`/mudirlar/${el.id}`)}
                 >
                   {t("brief")}

@@ -64,7 +64,7 @@ const BolimBoshliqlari = () => {
                 </div>
 
                 <button
-                  className="text-blue-500"
+                  className="text-blue-500 text-start"
                   onClick={() => navigate(`/bolimlar/${el.id}`)}
                 >
                   {t("brief")}

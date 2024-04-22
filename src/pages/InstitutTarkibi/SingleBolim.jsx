@@ -37,7 +37,7 @@ export default function SingleBolim() {
           </div>
           <div className="rounded-md bg-white shadow-2xl hover:shadow-xl  p-4 flex flex-col gap-2 md:max-w-[1000px] mx-auto my-10">
             <img
-              className="object-cover md:h-[500px]"
+              className="object-contain md:h-[500px] md:w-[500px] mx-auto"
               src={single.image}
               alt={
                 lang == "en"

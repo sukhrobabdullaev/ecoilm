@@ -91,7 +91,7 @@ export default function Rahbaryat() {
                 </div>
 
                 <button
-                  className="text-blue-500"
+                  className="text-blue-500 text-start"
                   onClick={() => navigate(`/raxbaryat/${el.id}`)}
                 >
                   {t("brief")}
