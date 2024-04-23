@@ -35,7 +35,7 @@ export default function Rahbaryat() {
         <div className="flex items-center flex-col gap-2 mt-6 ">
           {data.map((el) => (
             <div
-              className="flex gap-10 md:flex-row flex-col md:px-0 px-4 rounded-tl-lg rounded-br-lg bg-white justify-center pb-10 shadow-lg mb-4"
+              className="flex gap-10 md:flex-row flex-col md:px-0 px-4 rounded-tl-lg rounded-br-lg bg-white justify-center pb-10 shadow-lg mb-4 lg:w-[1000px] md:w-full"
               key={el.title}
             >
               <img
