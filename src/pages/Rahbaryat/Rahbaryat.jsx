@@ -68,11 +68,7 @@ export default function Rahbaryat() {
                   </div>
                   <div className="flex items-center gap-1">
                     <span className="font-bold">{t("receptionTime")}</span>
-                    <span>
-                      {lang == "en"
-                        ? el?.translations?.en?.reception_time
-                        : el?.translations?.uz?.reception_time}
-                    </span>
+                    <span>{el.reception_time}</span>
                   </div>
                   <p>
                     <strong>{t("receptionLoc")}</strong>
