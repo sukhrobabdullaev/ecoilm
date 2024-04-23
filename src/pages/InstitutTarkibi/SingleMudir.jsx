@@ -55,11 +55,15 @@ export default function SingleMudir() {
                 ? single?.translations?.en?.title
                 : single?.translations?.uz?.title}
             </p>
-            <p className="md:text-lg text-sm pt-2">
-              {lang == "en"
-                ? single?.translations?.en?.content
-                : single?.translations?.uz?.content}
-            </p>
+            <div
+              className="md:text-lg text-sm pt-2"
+              dangerouslySetInnerHTML={{
+                __html:
+                  lang == "en"
+                    ? single?.translations?.en?.content
+                    : single?.translations?.uz?.content,
+              }}
+            />
           </div>
         </div>
       )}
