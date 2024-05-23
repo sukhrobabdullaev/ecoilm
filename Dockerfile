@@ -1,21 +1,31 @@
-# Stage 1: Build the Next.js app
-FROM node:alpine AS build
+# Rasm yaratish uchun bazaviy image sifatida Node.js rasmidan foydalanamiz
+FROM node:14-alpine
 
+# Ishchi katalog yaratish va unga o'tish
 WORKDIR /app
 
-COPY package.json package-lock.json ./
+# package.json va package-lock.json fayllarini ishchi katalogga nusxalash
+COPY package*.json ./
+
+# Node.js paketlarini o'rnatish
 RUN npm install
 
+# Ilovaning barcha kodini ishchi katalogga nusxalash
 COPY . .
+
+# Ilovani build qilish
 RUN npm run build
 
-# Stage 2: Run the Next.js app
-FROM node:alpine
+# build katalogini Nginx serverda xizmat ko'rsatish uchun Nginx rasmini ishlatamiz
+FROM nginx:alpine
+COPY --from=build /app/build /usr/share/nginx/html
 
-WORKDIR /app
+# Nginx konfiguratsiyasini sozlash (agar kerak bo'lsa)
+# COPY nginx.conf /etc/nginx/nginx.conf
 
-COPY --from=build /app .
-
+# Portni ochish
 EXPOSE 3001
 
-CMD ["npm", "start"]
+# Nginx serverni ishga tushirish
+CMD ["nginx", "-g", "daemon off;"]
+
