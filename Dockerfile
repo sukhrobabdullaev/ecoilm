@@ -16,16 +16,8 @@ COPY . .
 # Ilovani build qilish
 RUN npm run build
 
-# build katalogini Nginx serverda xizmat ko'rsatish uchun Nginx rasmini ishlatamiz
-FROM nginx:alpine
-COPY --from=build /app/build /usr/share/nginx/html
-
-# Nginx konfiguratsiyasini sozlash (agar kerak bo'lsa)
-# COPY nginx.conf /etc/nginx/nginx.conf
-
-# Portni ochish
+# 3001 portni ochish
 EXPOSE 3001
 
-# Nginx serverni ishga tushirish
-CMD ["nginx", "-g", "daemon off;"]
-
+# Ilovani ishga tushirish
+CMD ["npm", "start"]
