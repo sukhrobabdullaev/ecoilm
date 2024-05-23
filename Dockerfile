@@ -1,20 +1,21 @@
-# Node.js runtime imkoniyatlari
-FROM node:latest
+# Stage 1: Build the Next.js app
+FROM node:alpine AS build
 
-# Ishlash direktoriyasini aniqlash
 WORKDIR /app
 
-# Ilgari yuklangan fayllarni docker image-ga nusxalash
-COPY package*.json ./
-
-# Node.js ilovasi uchun modullarni o'rnatish
+COPY package.json package-lock.json ./
 RUN npm install
 
-# Ilgari yuklangan barcha kodlarni docker image-ga nusxalash
 COPY . .
+RUN npm run build
 
-# Portni ajratish
+# Stage 2: Run the Next.js app
+FROM node:alpine
+
+WORKDIR /app
+
+COPY --from=build /app .
+
 EXPOSE 3001
 
-# Ilova ishga tushirish
 CMD ["npm", "start"]
