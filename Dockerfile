@@ -19,5 +19,6 @@ RUN npm run build
 # 3001 portni ochish
 EXPOSE 3000
 
+
 # Ilovani ishga tushirish
 CMD ["npm", "start"]
