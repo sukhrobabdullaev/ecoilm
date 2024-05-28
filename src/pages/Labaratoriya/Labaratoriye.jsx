@@ -40,7 +40,7 @@ export default function Labaratoriye() {
         size="large"
         items={[
           {
-            key: "1",
+            key: "2",
             label: (
               <div>
                 <p className="text-white text-[17px] font-semibold">
@@ -64,7 +64,7 @@ export default function Labaratoriye() {
         size="large"
         items={[
           {
-            key: "1",
+            key: "3",
             label: (
               <div>
                 <p className="text-white text-[17px] font-semibold">
@@ -88,7 +88,7 @@ export default function Labaratoriye() {
         size="large"
         items={[
           {
-            key: "1",
+            key: "4",
             label: (
               <div>
                 <p className="text-white text-[17px] font-semibold">
@@ -96,14 +96,7 @@ export default function Labaratoriye() {
                 </p>
               </div>
             ),
-            children: (
-              <div className="py-2">
-                <p className="font-semibold text-[18px] py-3">
-                  {t("labaratory3Desc")}
-                </p>
-                {t("labaratory4Con")}
-              </div>
-            ),
+            children: <div className="py-2">{t("labaratory4Con")}</div>,
           },
         ]}
       />
@@ -112,7 +105,7 @@ export default function Labaratoriye() {
         size="large"
         items={[
           {
-            key: "1",
+            key: "5",
             label: (
               <div>
                 <p className="text-white text-[17px] font-semibold">
@@ -136,7 +129,7 @@ export default function Labaratoriye() {
         size="large"
         items={[
           {
-            key: "1",
+            key: "6",
             label: (
               <div>
                 <p className="text-white text-[17px] font-semibold">
@@ -144,14 +137,41 @@ export default function Labaratoriye() {
                 </p>
               </div>
             ),
-            children: (
-              <div className="py-2">
-                <p className="font-semibold text-[18px] py-3">
-                  {t("labaratory5Desc")}
+            children: <div className="py-2">{t("labaratory6Con")}</div>,
+          },
+        ]}
+      />
+      <Collapse
+        className="w-[300px] mx-auto  md:w-[600px] lg:w-[900px] bg_lab"
+        size="large"
+        items={[
+          {
+            key: "7",
+            label: (
+              <div>
+                <p className="text-white text-[17px] font-semibold">
+                  {t("labaratory7")}
                 </p>
-                {t("labaratory6Con")}
               </div>
             ),
+            children: <div className="py-2">{t("labaratory7Con")}</div>,
+          },
+        ]}
+      />
+      <Collapse
+        className="w-[300px] mx-auto  md:w-[600px] lg:w-[900px] bg_lab"
+        size="large"
+        items={[
+          {
+            key: "8",
+            label: (
+              <div>
+                <p className="text-white text-[17px] font-semibold">
+                  {t("labaratory8")}
+                </p>
+              </div>
+            ),
+            children: <div className="py-2">{t("labaratory8Con")}</div>,
           },
         ]}
       />

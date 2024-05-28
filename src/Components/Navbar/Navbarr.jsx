@@ -47,16 +47,6 @@ const Navbarr = () => {
 
   const dropdownMenu = (
     <Menu className="">
-      <Menu.Item key="1">
-        <Link to="/tuzulma" onClick={closeMenu}>
-          {t("about1")}
-        </Link>
-      </Menu.Item>
-      <Menu.Item key="2">
-        <Link to="/labaratoriya" onClick={closeMenu}>
-          {t("about2")}
-        </Link>
-      </Menu.Item>
       <Menu.Item key="3">
         <Link to="/raxbaryat" onClick={closeMenu}>
           {t("about3")}
@@ -68,6 +58,16 @@ const Navbarr = () => {
             {t("about4")}
           </a>
         </Dropdown>
+      </Menu.Item>
+      <Menu.Item key="2">
+        <Link to="/labaratoriya" onClick={closeMenu}>
+          {t("about2")}
+        </Link>
+      </Menu.Item>
+      <Menu.Item key="1">
+        <Link to="/doktrantlar" onClick={closeMenu}>
+          {t("about1")}
+        </Link>
       </Menu.Item>
       <Menu.Item key="5">
         <Link to="/institut-tarixi" onClick={closeMenu}>
@@ -258,13 +258,14 @@ const Navbarr = () => {
                   </Link>
                 </li>
                 <li>
-                  <a
-                    href="#"
+                  <Link
+                    to="https://tadqiqotchi.ecoilm.uz/"
+                    target="_blank"
                     className="block py-2 px-3 rounded hover:bg-gray-100 md:hover:bg-transparent md:border-0  md:p-0 text-white "
                     onClick={closeMenu}
                   >
                     {t("technic")}
-                  </a>
+                  </Link>
                 </li>
               </ul>
               <div className=" bg-gray-900 flex items-start justify-center  border-gray-700 lg:pb-0 pb-4">

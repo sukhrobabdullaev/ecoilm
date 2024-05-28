@@ -87,7 +87,7 @@ export default function Footer() {
         </div>
         <div className="flex">
           {t("emaile")}
-          ecoilm@umail.uz
+          ecoilm@umail.uz, eco_nii@exat.uz
         </div>
         <div className="flex">
           {t("manzil")}

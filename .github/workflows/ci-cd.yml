@@ -2,9 +2,9 @@ name: Github Actions CI/CD
 
 on:
   push:
-    branches: [ main ]
+    branches: [main]
   pull_request:
-    branches: [ main ]
+    branches: [main]
 
 env:
   REPO_NAME: ${{ github.repository }}
@@ -13,7 +13,7 @@ env:
   SSH_HOST: ${{ secrets.SERVER_IP }}
   SSH_USER: ${{ secrets.SERVER_USERNAME }}
   SSH_KEY: ${{ secrets.SSH_PRIVATE_KEY }}
-  PORT: 3000:3000
+  PORT: 3002:3000
 
 jobs:
   build_and_push:
@@ -43,7 +43,6 @@ jobs:
           tags: "${{ env.REGISTRY }}/${{ env.REPO_NAME }}:${{ github.sha }}"
           cache-from: type=registry,ref=${{ env.REGISTRY }}/${{ env.REPO_NAME }}:buildcache
           cache-to: type=registry,ref=${{ env.REGISTRY }}/${{ env.REPO_NAME }}:buildcache,mode=max
-
 
   deploy:
     needs: build_and_push

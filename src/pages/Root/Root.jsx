@@ -190,6 +190,16 @@ export default function Root() {
               />
               <img
                 className="md:w-[150px] md:h-[150px] w-[100px] object-cover"
+                src="/assets/img/oliy_talim.png"
+                alt=""
+              />
+              <img
+                className="md:w-[150px] md:h-[150px] w-[100px]"
+                src="/assets/img/unep.png"
+                alt=""
+              />
+              <img
+                className="md:w-[150px] md:h-[150px] w-[100px] object-cover"
                 src="/assets/img/geostry.png"
                 alt=""
               />
@@ -219,6 +229,16 @@ export default function Root() {
             <img
               className="md:w-[150px] md:h-[150px] w-[100px] object-cover"
               src="/assets/img/hamkor.png"
+              alt=""
+            />
+            <img
+              className="md:w-[150px] md:h-[150px] w-[100px] object-cover"
+              src="/assets/img/oliy_talim.png"
+              alt=""
+            />
+            <img
+              className="md:w-[150px] md:h-[150px] w-[100px]"
+              src="/assets/img/unep.png"
               alt=""
             />
             <img
