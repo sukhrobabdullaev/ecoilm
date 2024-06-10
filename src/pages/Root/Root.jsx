@@ -199,6 +199,16 @@ export default function Root() {
                 alt=""
               />
               <img
+                className="md:w-[200px] md:h-[150px] w-[100px]"
+                src="https://telegra.ph/file/b2d7e56ab7cc8979b45cd.png"
+                alt=""
+              />
+              <img
+                className="md:w-[150px] md:h-[150px] w-[100px]"
+                src="https://upload.wikimedia.org/wikipedia/commons/1/1c/USGS_logo_green.svg"
+                alt=""
+              />
+              <img
                 className="md:w-[150px] md:h-[150px] w-[100px] object-cover"
                 src="/assets/img/geostry.png"
                 alt=""
@@ -211,6 +221,16 @@ export default function Root() {
               <img
                 className="md:w-[150px] md:h-[150px] w-[100px] object-cover"
                 src="/assets/img/Uzbek-Japanese.png"
+                alt=""
+              />
+              <img
+                className="md:w-[150px] md:h-[150px] w-[100px] object-cover"
+                src="https://eem.mcbu.edu.tr/wp-content/uploads/sites/3/2023/03/tubitak_logo-500x450.png"
+                alt=""
+              />
+              <img
+                className="md:w-[150px] md:h-[150px] w-[100px] object-cover"
+                src="/assets/img/world_bank.png"
                 alt=""
               />
             </Carousel>
@@ -242,6 +262,16 @@ export default function Root() {
               alt=""
             />
             <img
+              className="md:w-[150px] md:h-[150px] w-[100px]"
+              src="https://telegra.ph/file/b2d7e56ab7cc8979b45cd.png"
+              alt=""
+            />
+            <img
+              className="md:w-[150px] md:h-[150px] w-[100px]"
+              src="https://upload.wikimedia.org/wikipedia/commons/1/1c/USGS_logo_green.svg"
+              alt=""
+            />
+            <img
               className="md:w-[150px] md:h-[150px] w-[100px] object-cover"
               src="/assets/img/geostry.png"
               alt=""
@@ -254,6 +284,16 @@ export default function Root() {
             <img
               className="md:w-[150px] md:h-[150px] w-[100px] object-cover"
               src="/assets/img/Uzbek-Japanese.png"
+              alt=""
+            />
+            <img
+              className="md:w-[150px] md:h-[150px] w-[100px] object-cover"
+              src="https://eem.mcbu.edu.tr/wp-content/uploads/sites/3/2023/03/tubitak_logo-500x450.png"
+              alt=""
+            />
+            <img
+              className="md:w-[150px] md:h-[150px] w-[100px] object-cover"
+              src="/assets/img/world_bank.png"
               alt=""
             />
           </div>

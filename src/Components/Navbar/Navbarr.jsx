@@ -122,9 +122,9 @@ const Navbarr = () => {
 
   return (
     <div>
-      <div className="scroll-left">
+      {/* <div className="scroll-left">
         <p className="text-red-500">{t("testmode")}</p>
-      </div>
+      </div> */}
       <div>
         <nav className="border-gray-200 bg-gray-900">
           <div className="max-w-screen-xl flex items-center justify-between mx-auto p-2">

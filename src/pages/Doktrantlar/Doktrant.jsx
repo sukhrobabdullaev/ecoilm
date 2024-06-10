@@ -17,29 +17,25 @@ export default function Doktrant() {
   }, []);
   console.log(data);
   return (
-    <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4 justify-center p-10">
+    <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4 justify-center p-16 md:max-w-[1400px] mx-auto max-w-[300px]">
       {data.map((el) => (
-        <div className="bg-white p-4 rounded-lg shadow-md" key={el.title}>
+        <div className="bg-white p-2 rounded-lg shadow-md" key={el.title}>
           <img
             alt={el.last_first_name}
-            className="h-40 w-40 rounded-full mx-auto mb-4"
+            className="mx-auto mb-4"
             height="150"
             src={el.image}
-            style={{
-              aspectRatio: "150/150",
-              objectFit: "cover",
-            }}
+            style={
+              {
+                // aspectRatio: "150/150",
+                // objectFit: "cover",
+              }
+            }
             width="150"
           />
-          <div className="text-center">
+          <div className="text-center flex flex-col gap-2">
             <p className="font-semibold">{el.last_first_name}</p>
             <p className="text-sm text-gray-600">{el.title}</p>
-            <div className="flex justify-center mt-4 space-x-2">
-              <PlaneIcon className="h-5 w-5 text-gray-600" />
-              <LinkedinIcon className="h-5 w-5 text-gray-600" />
-              <FacebookIcon className="h-5 w-5 text-gray-600" />
-              <TwitterIcon className="h-5 w-5 text-gray-600" />
-            </div>
           </div>
         </div>
       ))}
