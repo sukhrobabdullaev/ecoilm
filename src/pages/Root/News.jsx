@@ -2,8 +2,8 @@ import axios from "axios";
 import { IoTimeOutline } from "react-icons/io5";
 import React, { useEffect, useState } from "react";
 import { Link, useNavigate } from "react-router-dom";
-import { lang } from "../../Components/Navbar/Navbarr";
 import { useTranslation } from "react-i18next";
+import { lang } from "../../Components/Navbar/Navbarr";
 
 export const formatDate = (dateString) => {
   const date = new Date(dateString);
